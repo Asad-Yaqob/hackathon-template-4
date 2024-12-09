@@ -1,5 +1,6 @@
 import React from "react";
 import MButton from "../resuable/Button";
+import Image from "next/image";
 
 
 
@@ -45,7 +46,9 @@ export const ProductShowcase = () => {
                 bg-[#ECD2FA59] rounded-full"
               />
               <div className="relative">
-                <img
+                <Image
+                  width={250}
+                  height={250}
                   src="/images/products/club-sofa.png"
                   alt="B&B Italian Sofa"
                   className="w-full h-auto max-w-[250px] sm:max-w-[300px] 

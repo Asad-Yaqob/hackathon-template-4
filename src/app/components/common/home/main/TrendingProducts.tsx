@@ -1,8 +1,8 @@
 import React from "react";
-import { Heart, ShoppingCart, Search } from "lucide-react";
 import { executiveChairs, trendingProducts } from "@/app/data/sample_data";
 import { LatestProductCard } from "../resuable/LatestProductCard";
 import TrendingProductCard from "../resuable/TrendingProductCard";
+import Image from "next/image";
 
 const TrendingProducts = () => {
   return (
@@ -33,7 +33,9 @@ const TrendingProducts = () => {
               Shop now
             </a>
           </div>
-          <img
+          <Image 
+            width={213}
+            height={217}
             src="/images/products/clock.png"
             alt="clock"
             className="absolute right-0 bottom-0 w-1/2 h-auto object-contain"
@@ -53,7 +55,9 @@ const TrendingProducts = () => {
               Shop now
             </a>
           </div>
-          <img
+          <Image
+           width={312}
+           height={173}
             src="/images/products/image1161.png"
             alt="furniture"
             className="absolute right-0 bottom-0 w-1/2 h-auto object-contain"
