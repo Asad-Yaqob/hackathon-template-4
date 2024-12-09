@@ -1,5 +1,6 @@
 import React from "react";
 import { Heart, ShoppingCart, Search } from "lucide-react";
+import Image from "next/image";
 
 interface ProductCardProps {
   image: string;
@@ -17,7 +18,7 @@ export function LatestProductCard({
   return (
     <div className="group relative w-[360px] h-[306px]">
       <div className="bg-[#F6F7FB] rounded-lg p-8 transition-all duration-300 flex items-center justify-center">
-        <img
+        <Image
           src={image}
           alt={name}
           className="w-[223px] h-[229px] object-contain mb-4 md:w-[123px] md:h-[123px] "

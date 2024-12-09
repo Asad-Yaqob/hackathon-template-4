@@ -1,13 +1,8 @@
 import React from "react";
-import { Truck, Headphones, ShieldCheck, CreditCard } from "lucide-react";
-import { shopexOffers } from "../../../data/sample_data";
 
-const icons = {
-  truck: Truck,
-  headphones: Headphones,
-  "shield-check": ShieldCheck,
-  "credit-card": CreditCard,
-};
+import { shopexOffers } from "../../../data/sample_data";
+import Image from "next/image";
+
 
 export function ShopexOffer() {
   return (
@@ -24,7 +19,7 @@ export function ShopexOffer() {
               className=" w-[270px] h-[320px] flex flex-col items-center justify-center rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <div className="mx-auto mb-4 flex text-center rounded-full">
-                <img
+                <Image
                   src={offer.image}
                   alt="png"
                   className=" w-[65px] h-[65px] object-contain mb-4 "
