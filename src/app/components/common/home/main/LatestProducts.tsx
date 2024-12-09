@@ -1,8 +1,8 @@
 "use client"
 import React, { useState } from "react";
-import { ProductTabs } from "./ProductTabs";
-import { LatestProductCard } from "./LatestProductCard";
-import { latestProducts } from "../../../data/sample_data";
+import { ProductTabs } from "../resuable/ProductTabs";
+import { LatestProductCard } from "../resuable/LatestProductCard";
+import { latestProducts } from "../../../../data/sample_data";
 import { ShopexOffer } from "./ShopexOffer";
 
 export function LatestProducts() {

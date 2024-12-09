@@ -3,25 +3,29 @@ export const products = [
     image: "/images/products/image-1.png",
     name: "Cantilever Chair",
     price: "42.00",
-    code: "Y523201"
+    code: "Y523201",
+    isFeature: true,
   },
   {
     image: "/images/products/image-2.png",
     name: "Shell Chair",
     price: "65.00",
-    code: "Y523202"
+    code: "Y523202",
+    isFeature: true,
   },
   {
     image: "/images/products/image-3.png",
     name: "Wooden Chair",
     price: "48.00",
-    code: "Y523203"
+    code: "Y523203",
+    isFeature: true,
   },
   {
     image: "/images/products/image-4.png",
     name: "Modern Chair",
     price: "55.00",
-    code: "Y523204"
+    code: "Y523204",
+    isFeature: true,
   }
 
 ];
@@ -91,27 +95,27 @@ export const shopexOffers = [
 export const trendingProducts = [
   {
     id: 1,
-    title: 'Cantilever chair',
-    price: 39.99,
-    image: '/images/chair-1.jpg'
+    name: 'Cantilever chair',
+    price: '39.99',
+    image: '/images/products/image-10.png'
   },
   {
     id: 2,
-    title: 'Cantilever chair',
-    price: 49.99,
-    image: '/images/chair-2.jpg'
+    name: 'Cantilever chair',
+    price: '49.99',
+    image: '/images/products/image-9.png'
   },
   {
     id: 3,
-    title: 'Cantilever chair',
-    price: 42.00,
-    image: '/images/chair-3.jpg'
+    name: 'Cantilever chair',
+    price: '42.00',
+    image: '/images/products/image-8.png'
   },
   {
     id: 4,
-    title: 'Cantilever chair',
-    price: 45.00,
-    image: '/images/chair-4.jpg'
+    name: 'Cantilever chair',
+    price: '45.00',
+    image: '/images/products/image-7.png'
   }
 ];
 
@@ -119,19 +123,19 @@ export const executiveChairs = [
   {
     id: 1,
     title: 'Executive Seat chair',
-    price: 32.00,
-    image: '/images/exec-chair-1.jpg'
+    price: '32.00',
+    image: '/images/products/kamzor-1.png'
   },
   {
     id: 2,
     title: 'Executive Seat chair',
-    price: 32.00,
-    image: '/images/exec-chair-2.jpg'
+    price:'32.00',
+    image: '/images/products/image-2.png'
   },
   {
     id: 3,
     title: 'Executive Seat chair',
-    price: 32.00,
-    image: '/images/exec-chair-3.jpg'
+    price:' 32.00',
+    image: '/images/products/image-3.png'
   }
 ];

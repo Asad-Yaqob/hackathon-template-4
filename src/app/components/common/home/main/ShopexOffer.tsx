@@ -1,6 +1,6 @@
 import React from "react";
 
-import { shopexOffers } from "../../../data/sample_data";
+import { shopexOffers } from "../../../../data/sample_data";
 import Image from "next/image";
 
 
@@ -21,8 +21,10 @@ export function ShopexOffer() {
               <div className="mx-auto mb-4 flex text-center rounded-full">
                 <Image
                   src={offer.image}
+                  width={65}
+                  height={65}
                   alt="png"
-                  className=" w-[65px] h-[65px] object-contain mb-4 "
+                  className="object-contain mb-4 "
                 />
               </div>
               <div className=" text-center p-3">

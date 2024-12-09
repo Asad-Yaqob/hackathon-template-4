@@ -12,7 +12,7 @@ export function ProductTabs({ tabs, activeTab, onTabChange }: TabProps) {
       {tabs.map((tab) => (
         <button
           key={tab}
-          className={`text-lg font-josefin ${
+          className={`text-[18px] font-josefin ${
             activeTab === tab
               ? 'text-[#FB2E86] border-b-2 border-[#FB2E86]'
               : 'text-[#151875]'

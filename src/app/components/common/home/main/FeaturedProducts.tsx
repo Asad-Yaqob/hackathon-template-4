@@ -1,6 +1,6 @@
 import React from "react";
-import { ProductCard } from "./FeaturedProductCard";
-import { products } from "../../../data/sample_data";
+import { ProductCard } from "../resuable/FeaturedProductCard";
+import { products } from "../../../../data/sample_data";
 
 export function FeaturedProducts() {
   return (

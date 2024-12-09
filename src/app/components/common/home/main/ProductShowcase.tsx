@@ -1,6 +1,6 @@
 import React from 'react';
-import MButton from "./Button";
-import ProductFeature from './ProductFeature';
+import MButton from "../resuable/Button";
+import ProductFeature from '../resuable/ProductFeature';
 import Image from 'next/image';
 
 export const ProductShowcase = () => {

@@ -21,7 +21,9 @@ export function LatestProductCard({
         <Image
           src={image}
           alt={name}
-          className="w-[223px] h-[229px] object-contain mb-4 md:w-[123px] md:h-[123px] "
+          width={223}
+          height={229}
+          className="object-contain mb-4 md:w-[123px] md:h-[123px] "
         />
         <div className="flex flex-col absolute bottom-[90px] md:bottom-[120px] left-4 space-y-2 opacity-0 group-hover:opacity-100 transition-opacity">
           <button className=" p-2 rounded-full ">

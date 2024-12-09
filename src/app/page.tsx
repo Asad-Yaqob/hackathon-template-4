@@ -1,7 +1,9 @@
-import HeroSection from "./components/common/home/HeroSection";
-import { FeaturedProducts } from "./components/common/home/FeaturedProducts";
-import { LatestProducts } from "./components/common/home/LatestProducts";
-import { ProductShowcase } from "./components/common/home/ProductShowcase";
+import HeroSection from "./components/common/home/main/HeroSection";
+import { FeaturedProducts } from "./components/common/home/main/FeaturedProducts";
+import { LatestProducts } from "./components/common/home/main/LatestProducts";
+import { ProductShowcase } from "./components/common/home/main/ProductShowcase";
+import TrendingProducts from "./components/common/home/main/TrendingProducts";
+import { DiscountItem } from "./components/common/home/main/DiscountItem";
 
 export default function Home() {
   return (
@@ -10,6 +12,8 @@ export default function Home() {
       <FeaturedProducts />
       <LatestProducts />
       <ProductShowcase />
+      <TrendingProducts />
+      <DiscountItem />
     </div>
   );
 }
