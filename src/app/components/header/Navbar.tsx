@@ -5,39 +5,32 @@ import { RiArrowDropDownLine } from 'react-icons/ri'
 
 const Navbar = () => {
   return (
-    <div className='max-w-[1176px] h-[40px] flex items-center justify-between font-lato my-5 mx-auto'>
+    <div className="w-full  md:max-w-[1920px] h-auto flex flex-wrap items-center justify-around font-lato mx-auto px-4 mb-5 mt-5">
+      {/* Brand */}
+      <div className="font-josefin text-[28px] sm:text-[34px] font-bold mb-4 sm:mb-0">
+        <span>Hekto</span>
+      </div>
 
-            <div className='font-josefin text-[34px] font-bold'>
-                <span>Hekto</span>
-            </div>
+      {/* Navigation Menu */}
+      <div className="hidden md:flex">
+        <ul className="flex items-center gap-5 sm:gap-10">
+          <li className="flex items-center" style={{ color: colors.pink }}>
+            Home <RiArrowDropDownLine size={20} />
+          </li>
+          <li>Pages</li>
+          <li>Products</li>
+          <li>Blog</li>
+          <li>Shop</li>
+          <li>Contact</li>
+        </ul>
+      </div>
 
-       <div>
-        <ul className="flex items-center gap-10 cursor-pointer">
-    <li className="flex items-center " style={{color: colors.pink}}>
-      Home <RiArrowDropDownLine  size={28}/>
-    </li>
-    <li className="flex items-center">
-      Pages 
-    </li>
-    <li className="flex items-center ">
-      Products 
-    </li>
-    <li className="flex items-center">
-      Blog 
-    </li>
-    <li className="flex items-center">
-        Shop
-    </li>
-    <li className="flex items-center">
-        Contact
-    </li>
-  </ul>
-        </div> 
-
-    
-      <SearchField />
+      {/* Search Field */}
+      <div className="w-full sm:w-auto mt-3 sm:mt-0">
+        <SearchField />
+      </div>
     </div>
-  )
+  );
 }
 
 export default Navbar

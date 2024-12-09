@@ -1,83 +1,73 @@
-'use client'
+"use client";
 import { Check } from "lucide-react";
 import { ProductTabs } from "../resuable/ProductTabs";
 import { useState } from "react";
 import Image from "next/image";
 
 export const DiscountItem = () => {
-    const tabs = ["Wood Chair", "Plastic Chair ", "Sofa Collection",];
-    const [activeTab, setActiveTab] = useState(tabs[0]);
+  const tabs = ["Wood Chair", "Plastic Chair", "Sofa Collection"];
+  const [activeTab, setActiveTab] = useState(tabs[0]);
+
   return (
-    <div className="w-[1214px] h-[597px]  mx-auto relative mb-10">
-      <h2 className="font-josefin font-bold text-[42px] mb-8 text-center ">
+    <div className="w-full mx-auto relative mb-16 p-4">
+      {/* Heading */}
+      <h2 className="font-josefin font-bold text-3xl sm:text-4xl text-center mb-6">
         Trending Products
       </h2>
 
+      {/* Tabs */}
       <ProductTabs
         tabs={tabs}
         activeTab={activeTab}
         onTabChange={setActiveTab}
       />
 
-      <div className="flex items-center justify-center gap-10 mx-auto">
-        <div>
-          <h2 className="font-josefin text-[#151875] text-[42px] mb-8">
+      <div className="flex flex-col lg:flex-row items-center justify-center gap-10 mt-8">
+        {/* Left Section */}
+        <div className="text-center lg:text-left">
+          <h2 className="font-josefin text-[#151875] text-3xl sm:text-4xl mb-4">
             20% Discount Of All Products
           </h2>
-          <span className="font-josefin text-[#FB2E86] text-[21px] ">
+          <span className="font-josefin text-[#FB2E86] text-xl sm:text-2xl">
             Eams Sofa Compact
           </span>
 
-          <div className="flex pt-5 gap-10 ">
-            <div className="flex flex-col  gap-y-5">
-              <div className="flex gap-3">
-                <Check /> Material expose like metals
+          <div className="flex flex-col sm:flex-row gap-8 pt-5">
+            {/* First Column */}
+            <div className="flex flex-col gap-y-5">
+              <div className="flex items-center gap-3">
+                <Check className="text-green-500" /> Material expose like metals
               </div>
-              <div className="flex gap-3">
-                <Check /> Simple neutral colours.
+              <div className="flex items-center gap-3">
+                <Check className="text-green-500" /> Simple neutral colours
               </div>
             </div>
 
-            <div className="flex flex-col  gap-y-5">
-              <div className="flex gap-3">
-                <Check />
-                Clear lines and geomatric figures
+            {/* Second Column */}
+            <div className="flex flex-col gap-y-5">
+              <div className="flex items-center gap-3">
+                <Check className="text-green-500" /> Clear lines and geometric
+                figures
               </div>
-              <div className="flex gap-3">
-                <Check />
-                Material expose like metals
+              <div className="flex items-center gap-3">
+                <Check className="text-green-500" /> Material expose like metals
               </div>
             </div>
           </div>
         </div>
 
-        <div className="">
-          {/* Background Circles */}
-          {/* <div className="absolute  w-[648px] h-[648px] md:w-[448px] md:h-[448px] bg-[#ECD2FA59] rounded-full"></div> */}
-
+        {/* Right Section */}
+        <div className="relative">
+          <div className="absolute inset-0 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] bg-[#ECD2FA59] rounded-full -z-10"></div>
           <Image
             src="/images/products/discount-chair.png"
             alt="Furniture Chair"
             width={509}
             height={550}
-            className="rounded-md md:w-[400px] md:h-[400px]"
+            className="rounded-md w-full sm:w-[400px]"
           />
         </div>
       </div>
     </div>
   );
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-

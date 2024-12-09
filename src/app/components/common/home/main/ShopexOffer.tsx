@@ -1,43 +1,38 @@
 import React from "react";
-
-import { shopexOffers } from "../../../../data/sample_data";
 import Image from "next/image";
-
+import { shopexOffers } from "../../../../data/sample_data";
 
 export function ShopexOffer() {
   return (
-    <section className="py-16 px-4 max-w-7xl mx-auto">
-      <h2 className="text-[42px] text-[#1A0B5B] font-josefin text-center mb-12">
+    <section className="py-8 md:py-12 lg:py-16 mt-8 md:mt-12">
+      <h2 className="text-3xl md:text-4xl lg:text-[42px] text-[#1A0B5B] font-josefin text-center mb-8 md:mb-12">
         What Shopex Offer!
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {shopexOffers.map((offer, index) => {
-
-          return (
-            <div
-              key={index}
-              className=" w-[270px] h-[320px] flex flex-col items-center justify-center rounded-lg shadow-md hover:shadow-lg transition-shadow"
-            >
-              <div className="mx-auto mb-4 flex text-center rounded-full">
-                <Image
-                  src={offer.image}
-                  width={65}
-                  height={65}
-                  alt="png"
-                  className="object-contain mb-4 "
-                />
-              </div>
-              <div className=" text-center p-3">
-                <h3 className="text-[22px] font-josefin text-[#151875] mb-2">
-                  {offer.title}
-                </h3>
-                <p className="text-[16px] text-[#1A0B5B4D]">
-                  {offer.description}
-                </p>
-              </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center">
+        {shopexOffers.map((offer, index) => (
+          <div
+            key={index}
+            className="w-full max-w-[270px] p-6 flex flex-col items-center justify-center rounded-lg shadow-md hover:shadow-lg transition-all duration-300 bg-white"
+          >
+            <div className="mb-6">
+              <Image
+                src={offer.image}
+                width={65}
+                height={65}
+                alt={offer.title}
+                className="object-contain"
+              />
             </div>
-          );
-        })}
+            <div className="text-center space-y-3">
+              <h3 className="text-xl md:text-2xl font-josefin text-[#151875]">
+                {offer.title}
+              </h3>
+              <p className="text-sm md:text-base text-[#1A0B5B4D]">
+                {offer.description}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
