@@ -1,9 +1,13 @@
-import HeroSection from "./components/common/home/main/HeroSection";
-import { FeaturedProducts } from "./components/common/home/main/FeaturedProducts";
-import { LatestProducts } from "./components/common/home/main/LatestProducts";
-import { ProductShowcase } from "./components/common/home/main/ProductShowcase";
-import TrendingProducts from "./components/common/home/main/TrendingProducts";
-import { DiscountItem } from "./components/common/home/main/DiscountItem";
+import HeroSection from "@/components/HeroSection";
+import { FeaturedProducts } from "@/components/FeaturedProducts";
+import { LatestProducts } from "@/components/LatestProducts";
+import { ProductShowcase } from "@/components/ProductShowcase";
+import TrendingProducts from "@/components/TrendingProducts";
+import { DiscountItem } from "@/components/DiscountItem";
+import TopCategories from "@/components/TopCategories";
+import SubscribeSection from "@/components/SubscribeSection";
+import LogoSection from "@/components/LogoSection";
+import LatestBlogSection from "@/components/LatestBlogSection";
 
 export default function Home() {
   return (
@@ -14,6 +18,10 @@ export default function Home() {
       <ProductShowcase />
       <TrendingProducts />
       <DiscountItem />
+      <TopCategories />
+      <SubscribeSection />
+      <LogoSection />
+      <LatestBlogSection />
     </div>
   );
 }

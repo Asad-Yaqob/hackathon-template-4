@@ -1,10 +1,24 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import HeadingBar from "./components/header/HeadingBar";
-import Navbar from "./components/header/Navbar";
-import Footer from "./components/footer/Footer";
-import FooterHeadingBar from "./components/footer/FooterHeadingBar";
+import HeadingBar from "@/components/HeadingBar";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import FooterHeadingBar from "@/components/FooterHeadingBar";
+import  { Josefin_Sans, Lato } from 'next/font/google'
+
+const josefin = Josefin_Sans({ 
+  subsets: ['latin'], 
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+  variable: "--font-josefin",
+})
+
+const lato = Lato({
+  subsets: ['latin'],
+  weight: ["100", "300", "400", "700"],
+  variable: "--font-lato",
+})
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,7 +44,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${josefin.variable} ${lato.variable} ${geistMono.variable} antialiased`}
       >
         <HeadingBar />
         <Navbar />
