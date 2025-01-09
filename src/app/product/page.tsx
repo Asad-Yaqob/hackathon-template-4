@@ -1,13 +1,21 @@
 "use client";
 import { client } from "@/sanity/lib/client";
-
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+// Define a TypeScript interface for products
+interface Product {
+  _id: string;
+  name: string;
+  description: string;
+  price: number;
+  image?: string; // Optional because the image might not always be available
+}
+
 const ProductsPage = () => {
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState("");
+  const [products, setProducts] = useState<Product[]>([]); // Use the Product type here
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string>("");
 
   useEffect(() => {
     const loadData = async () => {
@@ -20,7 +28,7 @@ const ProductsPage = () => {
           "image": image.asset->url
         }`;
 
-        const result = await client.fetch(query);
+        const result: Product[] = await client.fetch(query);
         setProducts(result);
         console.log(result);
       } catch (err) {
@@ -38,34 +46,32 @@ const ProductsPage = () => {
   if (error) return <p>{error}</p>;
 
   return (
-    <>
-      <div className="mx-auto ">
-        <div>
-          <h2>Explore Products</h2>
-        </div>
-        <div>
-          {products.length === 0 ? (
-            <p>No products found.</p>
-          ) : (
-            products.map((product: any) => (
-              <div key={product._id}>
-                <h3>{product.name}</h3>
-                <p>{product.description}</p>
-                {product.image && (
-                  <Image
-                    src={product.image}
-                    height={100}
-                    width={100}
-                    alt="Product Image"
-                  />
-                )}
-                <p>Price: ${product.price}</p>
-              </div>
-            ))
-          )}
-        </div>
+    <div className="mx-auto">
+      <div>
+        <h2>Explore Products</h2>
       </div>
-    </>
+      <div>
+        {products.length === 0 ? (
+          <p>No products found.</p>
+        ) : (
+          products.map((product) => (
+            <div key={product._id}>
+              <h3>{product.name}</h3>
+              <p>{product.description}</p>
+              {product.image && (
+                <Image
+                  src={product.image}
+                  height={100}
+                  width={100}
+                  alt="Product Image"
+                />
+              )}
+              <p>Price: ${product.price}</p>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
   );
 };
 
