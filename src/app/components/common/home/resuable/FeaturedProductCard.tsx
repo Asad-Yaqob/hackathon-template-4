@@ -33,13 +33,13 @@ export function ProductCard({
         {isFeature && (
           <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity space-y-2">
             <button className="p-2 bg-white rounded-full hover:bg-[#FB2E86] hover:text-white transition-colors">
-              <Heart size={18} className="sm:size-20" />
+              <Heart size={18} className="sm:size-5" />
             </button>
             <button className="p-2 bg-white rounded-full hover:bg-[#FB2E86] hover:text-white transition-colors">
-              <ShoppingCart size={18} className="sm:size-20" />
+              <ShoppingCart size={18} className="sm:size-5" />
             </button>
             <button className="p-2 bg-white rounded-full hover:bg-[#FB2E86] hover:text-white transition-colors">
-              <Search size={18} className="sm:size-20" />
+              <Search size={18} className="sm:size-5" />
             </button>
           </div>
         )}

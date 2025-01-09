@@ -36,26 +36,32 @@ export const ProductShowcase = () => {
     <section className="w-full py-8 md:py-12 lg:py-16">
       <div className="min-h-[400px] md:min-h-[579px] w-full bg-[#F1F0FF]">
         <div className="container mx-auto px-4">
+
           <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-            {/* Product Image */}
-            <div className="relative flex-shrink-0 w-full max-w-[509px]">
-              <div
-                className="absolute -top-4 -right-4 md:top-10 md:right-10 
-                w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] 
-                md:w-[448px] md:h-[448px]  
-                bg-[#ECD2FA59] rounded-full"
-              />
-              <div className="relative">
-                <Image
-                  width={250}
-                  height={250}
-                  src="/images/products/club-sofa.png"
-                  alt="B&B Italian Sofa"
-                  className="w-full h-auto max-w-[250px] sm:max-w-[300px] 
-                  md:max-w-[400px] lg:max-w-[509px] object-contain relative z-10"
-                />
-              </div>
-            </div>
+            
+          <div className="flex justify-center items-center">
+      {/* Product Image Container */}
+      <div className="relative flex flex-col items-center justify-center w-full max-w-[509px]">
+        {/* Rounded div behind the image */}
+        <div
+          className="absolute top-0 -right-10 -left-10 md:top-10 md:right-10 
+          w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] 
+          md:w-[448px] md:h-[448px] bg-[#ECD2FA59] rounded-full"
+        />
+        
+        {/* Image */}
+        <div className="relative">
+          <Image
+            width={250}
+            height={250}
+            src="/images/products/club-sofa.png"
+            alt="B&B Italian Sofa"
+            className="w-full h-auto max-w-[250px] sm:max-w-[300px] 
+            md:max-w-[400px] lg:max-w-[509px] object-contain relative z-10"
+          />
+        </div>
+      </div>
+    </div>
 
             {/* Product Details */}
             <div className="flex-1 max-w-xl py-4 md:py-8 space-y-4 md:space-y-6 px-4 md:px-0">
