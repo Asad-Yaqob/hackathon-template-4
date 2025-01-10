@@ -139,3 +139,26 @@ export const executiveChairs = [
     image: '/images/products/image-3.png'
   }
 ];
+
+ export const categories = [
+  {
+    name: 'Mini LCW Chair',
+    price: '$56.00',
+    image: '/images/products/category-chair-1.png'
+  },
+  {
+    name: 'Mini LCW Chair',
+    price: '$56.00',
+    image: '/images/products/image-1.png'
+  },
+  {
+    name: 'Mini LCW Chair',
+    price: '$56.00',
+    image: '/images/products/category-chair-2.png'
+  },
+  {
+    name: 'Mini LCW Chair',
+    price: '$56.00',
+    image: '/images/products/category-chair-1.png'
+  },
+ ];
