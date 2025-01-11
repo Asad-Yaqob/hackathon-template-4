@@ -1,3 +1,4 @@
+
 export const products = [
   {
     image: "/images/products/image-1.png",
@@ -28,6 +29,133 @@ export const products = [
     isFeature: true,
   }
 
+];
+
+export const shopGridProducts = [
+  {
+    image: "/images/products/shop-product-1.png",
+    title: "Vel elit euismod",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+  {
+    image: "/images/products/shop-product-2.png",
+    title: "Ultricies condimentum imperdiet",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+  {
+    image: "/images/products/shop-product-3.png",
+    title: "Vitae suspendisse sed",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+  {
+    image: "/images/products/shop-product-4.png",
+    title: "Sed at fermentum",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+  {
+    image: "/images/products/shop-product-5.png",
+    title: "Fusce pellentesque at",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+  {
+    image: "/images/products/shop-product-6.png",
+    title: "Vestibulum magna laoreet",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+  {
+    image: "/images/products/shop-product-7.png",
+    title: "Sollicitudin amet orci",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+  {
+    image: "/images/products/shop-product-8.png",
+    title: "Ultrices mauris sit",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+  {
+    image: "/images/products/shop-product-9.png",
+    title: "Pellentesque condimentum ac",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+  {
+    image: "/images/products/shop-product-10.png",
+    title: "Cras scelerisque velit",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+  {
+    image: "/images/products/shop-product-11.png",
+    title: "Lectus vulputate faucibus",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+  {
+    image: "/images/products/shop-product-4.png",
+    title: "Purus risus, ut",
+    orginalPrice: 42.00,
+    discountedPrice: 26.00,
+  },
+];
+
+export const shopList = [
+  {
+    image: "/images/products/shop-list-product-1.png",
+    title: "Accumsan tincidunt",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/shop-list-product-2.png",
+    title: "In nulla",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/shop-list-product-3.png",
+    title: "Vel sem",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/shop-list-product-4.png",
+    title: "Porttitor cum",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/shop-list-product-5.png",
+    title: "Nunc in",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/shop-list-product-6.png",
+    title: "Vitae facilisis",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/shop-list-product-7.png",
+    title: "Curabitur lectus",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
 ];
 
 export const latestProducts = [

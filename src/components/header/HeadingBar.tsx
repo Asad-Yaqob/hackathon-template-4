@@ -5,8 +5,9 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { IoPersonOutline } from "react-icons/io5";
 import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { IoCartOutline } from "react-icons/io5";
+import colors from '@/app/utils/constants/colors';
 
-import colors from '../../utils/constants/colors'
+
 
 const HeadingBar = () => {
   return (

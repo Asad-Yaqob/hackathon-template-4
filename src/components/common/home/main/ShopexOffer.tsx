@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { shopexOffers } from "../../../../data/sample_data";
+import { shopexOffers } from "@/app/data/sample_data";
 
 export function ShopexOffer() {
   return (

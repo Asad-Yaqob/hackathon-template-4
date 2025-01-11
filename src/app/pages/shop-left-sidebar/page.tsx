@@ -1,12 +1,16 @@
-import TitleHeader from '@/app/components/common/header/TitleHeader';
-import React from 'react'
+import TitleHeader from "@/components/common/header/TitleHeader";
+import { SortAndFilter } from "@/components/common/shop/SortAntFilter";
+import React from "react";
 
 const ShopLeftSidebar = () => {
   return (
-    <div>
+    <>
       <TitleHeader title="Shop Left Sidebar" />
-    </div>
+      <div className="flex items-center justify-center">
+        <SortAndFilter />
+      </div>
+    </>
   );
-}
+};
 
-export default ShopLeftSidebar
+export default ShopLeftSidebar;
