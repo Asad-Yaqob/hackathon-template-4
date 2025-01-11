@@ -1,12 +1,12 @@
 import TitleHeader from '@/app/components/common/header/TitleHeader';
 import React from 'react'
 
-const FAQ = () => {
+const NotFount = () => {
   return (
     <div>
-      <TitleHeader title="FAQ" />
+      <TitleHeader title="Not Found" />
     </div>
   );
 }
 
-export default FAQ
+export default NotFount

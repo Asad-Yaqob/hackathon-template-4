@@ -2,6 +2,7 @@ import React from 'react'
 import SearchField from '../common/header/SearchField'
 import colors from '@/app/utils/constants/colors'
 import { RiArrowDropDownLine } from 'react-icons/ri'
+import Link from 'next/link'
 
 const Navbar = () => {
   return (
@@ -14,14 +15,28 @@ const Navbar = () => {
       {/* Navigation Menu */}
       <div className="hidden md:flex">
         <ul className="flex items-center gap-5 sm:gap-10">
-          <li className="flex items-center" style={{ color: colors.pink }}>
-            Home <RiArrowDropDownLine size={20} />
+          <li style={{ color: colors.pink }}>
+            <Link href={"/"} className="flex items-center">
+              {" "}
+              Home <RiArrowDropDownLine size={20} />
+            </Link>
           </li>
-          <li>Pages</li>
-          <li>Products</li>
-          <li>Blog</li>
-          <li>Shop</li>
-          <li>Contact</li>
+          <li>
+            <Link href={"/pages/shop-grid-default"}>Pages</Link>
+          </li>
+          <li>
+            {" "}
+            <Link href={"/pages/shop-list"}>Products</Link>
+          </li>
+          <li>
+            <Link href={"/pages/blog-page"}>Blog</Link>
+          </li>
+          <li>
+            <Link href={"/pages/shopping-cart"}>Shop</Link>
+          </li>
+          <li>
+            <Link href={"/pages/contact-us"}>Contact</Link>
+          </li>
         </ul>
       </div>
 

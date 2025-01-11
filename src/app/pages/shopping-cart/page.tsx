@@ -1,11 +1,12 @@
+import TitleHeader from '@/app/components/common/header/TitleHeader';
 import React from 'react'
 
 const ShoppingCart = () => {
   return (
-    <div>
-      
-    </div>
-  )
+    <>
+      <TitleHeader title="Shopping Cart" />
+    </>
+  );
 }
 
 export default ShoppingCart
