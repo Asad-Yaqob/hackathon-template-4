@@ -1,4 +1,4 @@
-import { Heart, Search, ShoppingCart, Star, StarIcon } from "lucide-react";
+import { Heart, Search, ShoppingCart, Star,} from "lucide-react";
 import Image from "next/image";
 import React from "react";
 

@@ -1,3 +1,11 @@
+export const colors = [
+  {colorName:'Blue', color: 'bg-[#5E37FF]'}, 
+  {colorName:'Orange', color: 'bg-[#FF9437]'}, 
+  {colorName:'Brown', color: 'bg-[#FFBF95]'}, 
+  {colorName:'Green', color: 'bg-[#33D221]'}, 
+  {colorName:'Purple', color: 'bg-[#E248FF]'}, 
+  {colorName:'Sky', color: 'bg-[#26CBFF]'}, 
+];
 
 export const products = [
   {
@@ -28,6 +36,48 @@ export const products = [
     code: "Y523204",
     isFeature: true,
   }
+
+];
+
+export const productBrands = [
+  'Coaster Furniture',
+  'Fusion Dot High Fashion',
+  'Unique Furnitture Restor',
+  'Dream Furnitture Flipping',
+  'Young Repurposed',
+  'Green DIY furniture'
+];
+
+export const discountOffers = [
+  '20% Cashback',
+  '5% Cashback Offer',
+  '25% Discount Offer',
+];
+
+export const ratingItems = [
+  '(2341)',
+  '(1726)',
+  '(258)',
+  '(25)',
+];
+
+export const priceFilters = [
+  '$0.00 - $150.00',
+  '$150.00 - $350.00',
+  '$150.00 - $504.00',
+  '$450.00 +',
+];
+
+export const categoryItems = [
+  'Prestashop',
+  'Magento',
+  'Bigcommerce',
+  'osCommerce',
+  '3dcart',
+  'Bags',
+  'Accessories',
+  'Jewellery',
+  'Watches',
 
 ];
 
@@ -152,6 +202,58 @@ export const shopList = [
   {
     image: "/images/products/shop-list-product-7.png",
     title: "Curabitur lectus",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+];
+
+export const shopLeftList = [
+  {
+    image: "/images/products/left-product-1.png",
+    title: "Dictum morbi",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/left-product-2.png",
+    title: "Sodales sit",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/left-product-3.png",
+    title: "Nibh varius",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/left-product-4.png",
+    title: "Mauris quis",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/left-product-5.png",
+    title: "Morbi sagittis",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/left-product-6.png",
+    title: "Ultricies venenatis",
+    originalPrice: 52.00,
+    discountedPrice: 26.00,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
+  },
+  {
+    image: "/images/products/left-product-7.png",
+    title: "Scelerisque dignissim",
     originalPrice: 52.00,
     discountedPrice: 26.00,
     description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Magna in est adipiscing in phasellus non in justo.'
