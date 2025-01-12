@@ -7,6 +7,29 @@ export const colors = [
   {colorName:'Sky', color: 'bg-[#26CBFF]'}, 
 ];
 
+export const relatedProducts = [
+  {
+    image: '/images/products/related-product-1.png',
+    name: 'Mens Fashion Wear',
+    price: 43.00
+  },
+  {
+    image: '/images/products/related-product-2.png',
+    name: 'Mens Fashion Wear',
+    price: 67.00
+  },
+  {
+    image: '/images/products/related-product-3.png',
+    name: 'Mens Fashion Wear',
+    price: 67.00
+  },
+  {
+    image: '/images/products/related-product-4.png',
+    name: 'Mens Fashion Wear',
+    price: 51.00
+  }
+];
+
 export const products = [
   {
     image: "/images/products/image-1.png",

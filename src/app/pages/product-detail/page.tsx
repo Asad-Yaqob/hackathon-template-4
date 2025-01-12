@@ -1,12 +1,22 @@
-import TitleHeader from '@/components/common/header/TitleHeader';
-import React from 'react'
+import React from "react";
+import TitleHeader from "@/components/common/header/TitleHeader";
+
+import { ProductInformationSection } from "@/components/common/product/ProductInformationSection";
+import { ProductDetailSection } from "@/components/common/product/ProductDetailSection";
+import { RelatedProductSection } from "@/components/common/product/RelatedProductSection";
+import { BrandsHeader } from "@/components/common/footer/BrandsHeader";
+
 
 const ProductDetail = () => {
   return (
-    <div>
+    <>
       <TitleHeader title="Product Detail" />
-    </div>
+      <ProductInformationSection />
+      <ProductDetailSection />
+      <RelatedProductSection />
+      
+    </>
   );
-}
+};
 
-export default ProductDetail
+export default ProductDetail;
