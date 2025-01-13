@@ -7,6 +7,44 @@ export const colors = [
   {colorName:'Sky', color: 'bg-[#26CBFF]'}, 
 ];
 
+export const checkoutItems = [ 
+  {
+  image: "/images/products/chekout-item-1.png",
+  name: "Ut diam consequat",
+  color: "Brown",
+  size:  "XL",
+  price: 32.00,
+  },
+  {
+  image: "/images/products/chekout-item-2.png",
+  name: "Ut diam consequat",
+  color: "Brown",
+  size:  "XL",
+  price: 32.00,
+  },
+  {
+  image: "/images/products/chekout-item-3.png",
+  name: "Ut diam consequat",
+  color: "Brown",
+  size:  "XL",
+  price: 32.00,
+  },
+  {
+  image: "/images/products/chekout-item-4.png",
+  name: "Ut diam consequat",
+  color: "Brown",
+  size:  "XL",
+  price: 32.00,
+  },
+  {
+  image: "/images/products/chekout-item-5.png",
+  name: "Ut diam consequat",
+  color: "Brown",
+  size:  "XL",
+  price: 32.00,
+  },
+];
+
 export const cartItems = [
   {
   image: "/images/products/cart-product-1.png",
@@ -121,7 +159,7 @@ export const productBrands = [
 ];
 
 export const discountOffers = [
-  '20% Cashback',
+  '20% Cashbak',
   '5% Cashback Offer',
   '25% Discount Offer',
 ];
