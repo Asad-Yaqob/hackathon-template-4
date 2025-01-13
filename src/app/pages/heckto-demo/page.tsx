@@ -3,11 +3,11 @@ import { CartTotal } from "@/components/common/cart/CartTotal";
 import { CheckoutForm } from "@/components/common/checkout/CheckoutForm";
 import CheckoutItem from "@/components/common/checkout/CheckoutItem";
 import TitleHeader from "@/components/common/header/TitleHeader";
-import Image from "next/image";
-import React from "react";
+
 
 const HecktoDemo = () => {
   return (
+    
     <>
       <TitleHeader title="Heckto Demo" />
 

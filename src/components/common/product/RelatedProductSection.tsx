@@ -1,6 +1,5 @@
 import { relatedProducts } from "@/app/data/sample_data";
-import { Star } from "lucide-react";
-import Image from "next/image";
+
 import React from "react";
 import { RelatedProductCard } from "./RelatedProductCard";
 import { BrandsHeader } from "../footer/BrandsHeader";

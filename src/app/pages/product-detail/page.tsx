@@ -4,7 +4,6 @@ import TitleHeader from "@/components/common/header/TitleHeader";
 import { ProductInformationSection } from "@/components/common/product/ProductInformationSection";
 import { ProductDetailSection } from "@/components/common/product/ProductDetailSection";
 import { RelatedProductSection } from "@/components/common/product/RelatedProductSection";
-import { BrandsHeader } from "@/components/common/footer/BrandsHeader";
 
 
 const ProductDetail = () => {

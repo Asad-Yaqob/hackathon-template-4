@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import ShopGridCard from "@/components/common/shop/ShopGridCard";
 import TitleHeader from "@/components/common/header/TitleHeader";
 
