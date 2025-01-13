@@ -7,6 +7,55 @@ export const colors = [
   {colorName:'Sky', color: 'bg-[#26CBFF]'}, 
 ];
 
+export const cartItems = [
+  {
+  image: "/images/products/cart-product-1.png",
+  name: "Ut diam consequat",
+  color: "Brown",
+  size:  "XL",
+  price: 32.00,
+  quantity: 1,
+  total: 219.00
+  },
+  {
+  image: "/images/products/cart-product-2.png",
+  name: "Vel faucibus posuere",
+  color: "Brown",
+  size:  "XL",
+  price: 32.00,
+  quantity: 1,
+  total: 219.00
+  },
+  {
+  image: "/images/products/cart-product-4.png",
+  name: "Ac vitae vestibulumm",
+  color: "Brown",
+  size:  "XL",
+  price: 32.00,
+  quantity: 1,
+  total: 219.00
+  },
+  {
+  image: "/images/products/cart-product-3.png",
+  name: "Elit massa diam",
+  color: "Brown",
+  size:  "XL",
+  price: 32.00,
+  quantity: 1,
+  total: 219.00
+  },
+  {
+  image: "/images/products/cart-product-4.png",
+  name: "Proin pharetra elementum",
+  color: "Brown",
+  size:  "XL",
+  price: 32.00,
+  quantity: 1,
+  total: 219.00
+  },
+
+];
+
 export const relatedProducts = [
   {
     image: '/images/products/related-product-1.png',
