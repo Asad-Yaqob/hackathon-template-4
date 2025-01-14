@@ -7,6 +7,35 @@ export const colors = [
   {colorName:'Sky', color: 'bg-[#26CBFF]'}, 
 ];
 
+export const homeBlogs = [
+ { 
+  image: "/images/blogs/blog-1.png",
+  isActive: false,
+  writeName: "Saber Ali",
+  date: "21 August,2020",
+  name:"Top esssential Trends in 2021",
+  description: "More off this less hello samlande lied much over tightly circa horse taped mightly"
+},
+ { 
+  image: "/images/blogs/blog-2.png",
+  isActive: true,
+  writeName: "Saber Ali",
+  date: "21 August,2020",
+  name:"Top esssential Trends in 2021",
+  description: "More off this less hello samlande lied much over tightly circa horse taped mightly"
+},
+ { 
+  image: "/images/blogs/blog-3.png",
+  isActive: false,
+  writeName: "Saber Ali",
+  date: "21 August,2020",
+  name:"Top esssential Trends in 2021",
+  description: "More off this less hello samlande lied much over tightly circa horse taped mightly"
+}
+
+];
+
+
 export const checkoutItems = [ 
   {
   image: "/images/products/chekout-item-1.png",
