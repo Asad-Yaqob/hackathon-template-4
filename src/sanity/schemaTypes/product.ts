@@ -1,64 +1,65 @@
-interface ValidationRule {
-  required: () => ValidationRule;
-  min: (value: number) => ValidationRule;
-  max: (value: number) => ValidationRule;
-}
-
-interface Field {
-  name: string;
-  title: string;
-  type: string;
-  validation?: (Rule: ValidationRule) => ValidationRule;
-  options?: {
-    hotspot?: boolean;
-  };
-  to?: { type: string }[];
-}
-
-interface ProductSchema {
-  name: string;
-  title: string;
-  type: string;
-  fields: Field[];
-}
-
-export const productSchema: ProductSchema = {
-  name: "product",
-  title: "Product",
-  type: "document",
+export default {
+  name: 'product',
+  type: 'document',
+  title: 'Product',
   fields: [
     {
-      name: "name",
-      title: "Name",
-      type: "string",
-      validation: (Rule: ValidationRule) => Rule.required().min(3).max(100),
+      name: 'name',
+      type: 'string',
+      title: 'Name',
+      validation: (Rule: any) => Rule.required().error('Name is required'),
     },
     {
-      name: "description",
-      title: "Description",
-      type: "text",
-      validation: (Rule: ValidationRule) => Rule.required().min(10).max(1000),
-    },
-    {
-      name: "price",
-      title: "Price",
-      type: "number",
-      validation: (Rule: ValidationRule) => Rule.required().min(0),
-    },
-    {
-      name: "image",
-      title: "Image",
-      type: "image",
+      name: 'image',
+      type: 'image',
+      title: 'Image',
       options: {
         hotspot: true,
       },
+      description: 'Upload an image of the product.',
     },
-    // Uncomment if needed in the future
-    // {
-    //   name: 'category',
-    //   title: 'Category',
-    //   type: 'reference',
-    //   to: [{ type: 'category' }],
-    // },
+    {
+      name: 'price',
+      type: 'string',
+      title: 'Price',
+      validation: (Rule: any) => Rule.required().error('Price is required'),
+    },
+    {
+      name: 'description',
+      type: 'text',
+      title: 'Description',
+      validation: (Rule: any) =>
+        Rule.max(150).warning('Keep the description under 150 characters.'),
+    },
+    {
+      name: 'discountPercentage',
+      type: 'number',
+      title: 'Discount Percentage',
+      validation: (Rule: any) =>
+        Rule.min(0).max(100).warning('Discount must be between 0 and 100.'),
+    },
+    {
+      name: 'isFeaturedProduct',
+      type: 'boolean',
+      title: 'Is Featured Product',
+    },
+    {
+      name: 'stockLevel',
+      type: 'number',
+      title: 'Stock Level',
+      validation: (Rule: any) => Rule.min(0).error('Stock level must be a positive number.'),
+    },
+    {
+      name: 'category',
+      type: 'string',
+      title: 'Category',
+      options: {
+        list: [
+          { title: 'Chair', value: 'Chair' },
+          { title: 'Sofa', value: 'Sofa' },
+        ],
+      },
+      validation: (Rule: any) => Rule.required().error('Category is required'),
+    },
   ],
 };
