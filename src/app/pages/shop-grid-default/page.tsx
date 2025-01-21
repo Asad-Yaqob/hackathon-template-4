@@ -4,11 +4,11 @@ import TitleHeader from "@/components/common/header/TitleHeader";
 import { SortAndFilter } from "@/components/common/shop/SortAntFilter";
 import { BrandsHeader } from "@/components/common/footer/BrandsHeader";
 import { Product } from "@/types/product";
-import { getProducts } from "@/app/utils/helper/product_methods";
+import { fetchProducts } from "@/app/utils/helper/product_methods";
 
 
 const ShopGirdDefault = async () => {
-  const products = await getProducts();
+  const products = await fetchProducts();
   return (
     <>
       <TitleHeader title="Shop Grid Default" />

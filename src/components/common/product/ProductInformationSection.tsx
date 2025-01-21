@@ -1,10 +1,12 @@
-import { Star } from 'lucide-react';
-import Image from 'next/image';
-import React from 'react'
-import { BiHeart } from 'react-icons/bi';
-import { BsFacebook, BsInstagram, BsTwitter } from 'react-icons/bs';
+import { Product } from "@/types/product";
+import { Star } from "lucide-react";
+import Image from "next/image";
+import React from "react";
+import { BiHeart } from "react-icons/bi";
+import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 
-export const ProductInformationSection = () => {
+export const ProductInformationSection = ({ data }: { data: Product[] }) => {
+  console.log(data);
   return (
     <div>
       <div className="w-[1170px] h-[509px] my-10 mx-auto">
@@ -34,7 +36,7 @@ export const ProductInformationSection = () => {
           {/* Main Image */}
           <div className="ms-6">
             <Image
-              src={"/images/products/product-detail-4.png"}
+              src={data[0].imageUrl}
               alt="Product Image"
               width={375}
               height={487}
@@ -44,7 +46,7 @@ export const ProductInformationSection = () => {
           {/* Product Information */}
           <div className="flex flex-col ms-10">
             <h2 className="text-[36px] font-josefin text-[#0D134E] font-bold">
-              Playwood arm chair
+              {data[0].name}
             </h2>
             <div className="flex items-center ">
               <Star color="#FFC416" fill="#FFC416" height={9.48} />
@@ -58,10 +60,10 @@ export const ProductInformationSection = () => {
             </div>
             <div className="mt-5">
               <span className="text-[16px] font-josefin text-[#151875] me-3">
-                $32.00
+                {data[0].price}
               </span>
               <span className="text-[#FB2E86] text-[16px] font-josefin line-through">
-                $32.00
+                {data[0].discountPercentage}
               </span>
             </div>
             <h4 className="text-[16px] font-josefin text-[#0D134E] mt-5">
@@ -69,8 +71,7 @@ export const ProductInformationSection = () => {
             </h4>
             <div className="mt-5">
               <p className="text-[16px] font-josefin text-[#A9ACC6] ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
-                tellus porttitor purus, et volutpat sit.
+                {data[0].description}
               </p>
             </div>
             <div className="mt-5 flex  items-center gap-5">
@@ -82,6 +83,9 @@ export const ProductInformationSection = () => {
             <h4 className="text-[16px] font-josefin text-[#0D134E] mt-5">
               Categories
             </h4>
+            <p className="text-[16px] font-josefin text-[#A9ACC6] mt-3">
+              {data[0].category}
+            </p>
             <h4 className="text-[16px] font-josefin text-[#0D134E] mt-5">
               Tags
             </h4>
@@ -99,6 +103,4 @@ export const ProductInformationSection = () => {
       </div>
     </div>
   );
-}
-
-
+};

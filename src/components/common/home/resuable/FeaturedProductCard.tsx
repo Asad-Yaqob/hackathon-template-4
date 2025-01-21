@@ -1,28 +1,25 @@
 import React from "react";
 import { Heart, ShoppingCart, Search } from "lucide-react";
 import Image from "next/image";
+import { Product } from "@/types/product";
+import Link from "next/link";
 
-interface ProductCardProps {
-  image: string;
-  name: string;
-  price: string;
-  code?: string;
-  isFeature?: boolean;
-}
 
-export function ProductCard({
-  image,
+
+export  function  ProductCard({
+  _id,
+  imageUrl,
   name,
   price,
-  code,
-  isFeature,
-}: ProductCardProps) {
+  isFeaturedProduct
+}: Product) {
+
   return (
     <div className="group relative flex flex-col items-center justify-between w-full max-w-[270px] h-[350px] sm:h-[400px] shadow-lg rounded overflow-hidden">
       {/* Image Section */}
       <div className="flex items-center justify-center bg-[#F6F7FB] w-full h-[200px] sm:h-[236px]">
         <Image
-          src={image}
+          src={imageUrl}
           alt={name}
           width={179}
           height={178}
@@ -30,7 +27,7 @@ export function ProductCard({
         />
 
         {/* Feature Buttons */}
-        {isFeature && (
+        {isFeaturedProduct && (
           <div className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity space-y-2">
             <button className="p-2 bg-white rounded-full hover:bg-[#FB2E86] hover:text-white transition-colors">
               <Heart size={18} className="sm:size-5" />
@@ -52,14 +49,14 @@ export function ProductCard({
         </h3>
 
         {/* Feature-specific Content */}
-        {isFeature && (
+        {isFeaturedProduct && (
           <div className="space-y-1 sm:space-y-2">
             <div className="flex justify-center space-x-2">
               <div className="w-[14px] h-[4px] bg-[#05E6B7] rounded-full"></div>
               <div className="w-[14px] h-[4px] bg-[#F701A8] rounded-full"></div>
               <div className="w-[14px] h-[4px] bg-[#00009D] rounded-full"></div>
             </div>
-            <p className="text-[10px] sm:text-[12px]">Code - {code}</p>
+            <p className="text-[10px] sm:text-[12px]">Code - 0000</p>
           </div>
         )}
 
@@ -68,9 +65,11 @@ export function ProductCard({
       </div>
 
       {/* View Details Button */}
-      {isFeature && (
+      {isFeaturedProduct && (
         <div className="hidden group-hover:flex absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#08D15F] w-[94px] h-[29px] items-center justify-center rounded hover:bg-[#06B14C] transition-all duration-300">
-          <p className="text-white font-josefin text-[12px]">View Details</p>
+          <Link href={`/pages/product-detail/${_id}`}>
+            <p className="text-white font-josefin text-[12px]">View Details</p>
+          </Link>
         </div>
       )}
     </div>

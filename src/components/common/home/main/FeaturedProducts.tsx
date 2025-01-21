@@ -1,9 +1,12 @@
 import React from "react";
 import { ProductCard } from "../resuable/FeaturedProductCard";
-import { products } from "@/app/data/sample_data";
+import { fetchFeaturedProducts } from "@/app/utils/helper/product_methods";
+import { Product } from "@/types/product";
 
 
-export function FeaturedProducts() {
+export async function FeaturedProducts() {
+  const featuredProducts = await fetchFeaturedProducts();
+  // console.log(featuredProducts);
   return (
     <section className="py-8 sm:py-12 lg:py-16 mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-2xl sm:text-3xl lg:text-[42px] text-[#1A0B5B] font-josefin text-center mb-8 lg:mb-12">
@@ -11,7 +14,7 @@ export function FeaturedProducts() {
       </h2>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 justify-items-center">
-        {products.map((product, index) => (
+        {featuredProducts.map((product: Product, index: number) => (
           <ProductCard key={index} {...product} />
         ))}
       </div>

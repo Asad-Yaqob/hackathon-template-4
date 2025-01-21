@@ -5,11 +5,11 @@ import { SortAndFilter } from "@/components/common/shop/SortAntFilter";
 import { SidebarFilterOption } from "@/components/common/shop/SidebarFilterOption";
 import { ShopListCard } from "@/components/common/shop/ShopListCard";
 import { BrandsHeader } from "@/components/common/footer/BrandsHeader";
-import { getProducts } from "@/app/utils/helper/product_methods";
+import { fetchProducts } from "@/app/utils/helper/product_methods";
 import { Product } from "@/types/product";
 
 const ShopLeftSidebar = async () => {
-  const products = await getProducts();
+  const products = await fetchProducts();
   return (
     <>
       <TitleHeader title="Shop Left Sidebar" />
