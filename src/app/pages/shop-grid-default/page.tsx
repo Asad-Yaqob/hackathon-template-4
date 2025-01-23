@@ -4,8 +4,7 @@ import TitleHeader from "@/components/common/header/TitleHeader";
 import { SortAndFilter } from "@/components/common/shop/SortAntFilter";
 import { BrandsHeader } from "@/components/common/footer/BrandsHeader";
 import { Product } from "@/types/product";
-import { fetchProducts } from "@/app/utils/helper/product_methods";
-
+import { fetchProducts } from "@/actions/product_actions";
 
 const ShopGirdDefault = async () => {
   const products = await fetchProducts();

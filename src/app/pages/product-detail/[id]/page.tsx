@@ -3,7 +3,7 @@ import TitleHeader from "@/components/common/header/TitleHeader";
 import { ProductInformationSection } from "@/components/common/product/ProductInformationSection";
 import { ProductDetailSection } from "@/components/common/product/ProductDetailSection";
 import { RelatedProductSection } from "@/components/common/product/RelatedProductSection";
-import { fetchProductById } from "@/app/utils/helper/product_methods";
+import { fetchProductById } from "@/actions/product_actions";
 import { Product } from "@/types/product";
 
 const ProductDetail = async ({
@@ -12,7 +12,7 @@ const ProductDetail = async ({
   params: Promise<{ id: string }>;
 }) => {
   const productId = (await params).id;
-  const productData: Product [] = await fetchProductById(productId);
+  const productData: Product[] = await fetchProductById(productId);
   return (
     <>
       <TitleHeader title="Product Detail" />

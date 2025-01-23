@@ -5,7 +5,7 @@ import { SortAndFilter } from "@/components/common/shop/SortAntFilter";
 import { ShopListCard } from "@/components/common/shop/ShopListCard";
 import { BrandsHeader } from "@/components/common/footer/BrandsHeader";
 import { Product } from "@/types/product";
-import { fetchProducts } from "@/app/utils/helper/product_methods";
+import { fetchProducts } from "@/actions/product_actions";
 
 const ShopList = async () => {
   const products = await fetchProducts();
@@ -14,7 +14,7 @@ const ShopList = async () => {
       <TitleHeader title="Shop List" />
       <div className="flex flex-col items-center justify-center">
         <SortAndFilter />
-        {products.map((product:Product, index: number) => (
+        {products.map((product: Product, index: number) => (
           <ShopListCard {...product} key={index} />
         ))}
         <BrandsHeader />

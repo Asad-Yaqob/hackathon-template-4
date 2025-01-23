@@ -1,8 +1,7 @@
 import React from "react";
 import { ProductCard } from "../resuable/FeaturedProductCard";
-import { fetchFeaturedProducts } from "@/app/utils/helper/product_methods";
+import { fetchFeaturedProducts } from "@/actions/product_actions";
 import { Product } from "@/types/product";
-
 
 export async function FeaturedProducts() {
   const featuredProducts = await fetchFeaturedProducts();

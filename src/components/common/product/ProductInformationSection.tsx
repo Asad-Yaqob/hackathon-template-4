@@ -1,3 +1,5 @@
+'use client'
+import { addItemToCart } from "@/actions/cart_actions";
 import { Product } from "@/types/product";
 import { Star } from "lucide-react";
 import Image from "next/image";
@@ -6,7 +8,7 @@ import { BiHeart } from "react-icons/bi";
 import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 
 export const ProductInformationSection = ({ data }: { data: Product[] }) => {
-  console.log(data);
+  // console.log(data);
   return (
     <div>
       <div className="w-[1170px] h-[509px] my-10 mx-auto">
@@ -75,9 +77,12 @@ export const ProductInformationSection = ({ data }: { data: Product[] }) => {
               </p>
             </div>
             <div className="mt-5 flex  items-center gap-5">
-              <p className="text-[16px] font-josefin text-[#151875] ">
+              <button
+                onClick={() => addItemToCart(data[0])}
+                className="text-[16px] font-josefin text-[#151875] "
+              >
                 Add To Cart
-              </p>
+              </button>
               <BiHeart size={31} />
             </div>
             <h4 className="text-[16px] font-josefin text-[#0D134E] mt-5">
