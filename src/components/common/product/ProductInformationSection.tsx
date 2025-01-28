@@ -78,7 +78,14 @@ export const ProductInformationSection = ({ data }: { data: Product[] }) => {
             </div>
             <div className="mt-5 flex  items-center gap-5">
               <button
-                onClick={() => addItemToCart(data[0])}
+                onClick={() =>
+                  addItemToCart(
+                    data[0]._id,
+                    data[0].name,
+                    parseInt(data[0].price),
+                    data[0].imageUrl
+                  )
+                }
                 className="text-[16px] font-josefin text-[#151875] "
               >
                 Add To Cart

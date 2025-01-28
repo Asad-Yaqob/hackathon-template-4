@@ -1,26 +1,38 @@
-import { Minus, Plus } from "lucide-react";
-import Image from "next/image";
+"use client";
 import React from "react";
+import Image from "next/image";
 
-interface CartItemsProps {
+import { Minus, Plus } from "lucide-react";
+import { useCartContext } from "@/context/cart_context";
+
+type CartItemsProps = {
   image: string;
   name: string;
-  price: number;
-  color: string;
-  size: string;
+  price: string;
   quantity: number;
-  total: number;
-}
+  productId: string;
+};
 
 export const CartItem = ({
   image,
   name,
   price,
-  color,
-  size,
   quantity,
-  total,
+  productId,
 }: CartItemsProps) => {
+
+  const { addToCart, removeFromCart } = useCartContext();
+
+  const cartItem = {
+    productId,
+    name,
+    image,
+    price,
+    quantity,
+  }
+  const convertPrice = parseInt(price);
+  const totalPrice = convertPrice * quantity;
+
   return (
     <>
       <tr className="mt-5">
@@ -34,15 +46,13 @@ export const CartItem = ({
             className="rounded object-contain"
           />
           <div className="flex flex-col pl-3">
-            <h3 className="text-[14px] font-josefin text-[#1D3178]">
-             {name}
-            </h3>
+            <h3 className="text-[14px] font-josefin text-[#1D3178]">{name}</h3>
             <div className="flex gap-1">
               <span className="text-[12px] font-josefin text-[#A1A8C1]">
                 Color:
               </span>
               <span className="text-[12px] font-josefin text-[#A1A8C1]">
-                {color}
+                Brown
               </span>
             </div>
             <div className="flex gap-1">
@@ -50,7 +60,7 @@ export const CartItem = ({
                 Size:
               </span>
               <span className="text-[12px] font-josefin text-[#A1A8C1]">
-                {size}
+                XL
               </span>
             </div>
           </div>
@@ -59,29 +69,35 @@ export const CartItem = ({
         {/* Price */}
         <td className="px-4 py-2 text-center">
           <span className="text-[14px] font-josefin text-[#15245E]">
-           ${price}
+            ${price}
           </span>
         </td>
 
         {/* Quantity */}
         <td className="px-4 py-2">
           <div className="flex items-center justify-center">
-            <span className="bg-[#E7E7EF] w-[24px] h-[24px] flex items-center justify-center rounded">
+            <button
+              onClick={() => removeFromCart(cartItem)}
+              className="bg-[#E7E7EF] w-[24px] h-[24px] flex items-center justify-center rounded"
+            >
               <Minus width={12} />
-            </span>
+            </button>
             <p className="bg-[#F0EFF2] w-[51px] h-[24px] text-[#BEBFC2] text-[12px] text-center flex items-center justify-center">
               {quantity}
             </p>
-            <span className="bg-[#E7E7EF] w-[24px] h-[24px] flex items-center justify-center rounded">
+            <button
+              onClick={() => addToCart(cartItem)}
+              className="bg-[#E7E7EF] w-[24px] h-[24px] flex items-center justify-center rounded"
+            >
               <Plus width={12} />
-            </span>
+            </button>
           </div>
         </td>
 
         {/* Total */}
         <td className="px-4 py-2 text-center">
           <span className="text-[14px] font-josefin text-[#15245E]">
-            ${total}
+            ${totalPrice}
           </span>
         </td>
       </tr>

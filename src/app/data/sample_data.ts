@@ -80,7 +80,7 @@ export const cartItems = [
   name: "Ut diam consequat",
   color: "Brown",
   size:  "XL",
-  price: 32.00,
+  price: '32.00',
   quantity: 1,
   total: 219.00
   },
@@ -89,7 +89,7 @@ export const cartItems = [
   name: "Vel faucibus posuere",
   color: "Brown",
   size:  "XL",
-  price: 32.00,
+  price: '32.00',
   quantity: 1,
   total: 219.00
   },
@@ -98,7 +98,7 @@ export const cartItems = [
   name: "Ac vitae vestibulumm",
   color: "Brown",
   size:  "XL",
-  price: 32.00,
+  price: '32.00',
   quantity: 1,
   total: 219.00
   },
@@ -107,7 +107,7 @@ export const cartItems = [
   name: "Elit massa diam",
   color: "Brown",
   size:  "XL",
-  price: 32.00,
+  price: '32.00',
   quantity: 1,
   total: 219.00
   },
@@ -116,7 +116,7 @@ export const cartItems = [
   name: "Proin pharetra elementum",
   color: "Brown",
   size:  "XL",
-  price: 32.00,
+  price: '32.00',
   quantity: 1,
   total: 219.00
   },

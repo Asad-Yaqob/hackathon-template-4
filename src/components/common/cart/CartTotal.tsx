@@ -1,6 +1,9 @@
+'use client'
+import { useCartContext } from '@/context/cart_context';
 import React from 'react'
 
 export const CartTotal = () => {
+  const { getCartTotal } = useCartContext();
   return (
     <div className="ms-14">
       <h2 className="text-[20px] font-josefin text-[#1D3178] text-center my-4">
@@ -13,7 +16,7 @@ export const CartTotal = () => {
             Subtotals:
           </h3>
           <p className="text-[16px] font-normal font-lato text-[#15245E]">
-            $219.00
+            ${getCartTotal()}
           </p>
         </div>
         <div className="w-full bg-[#E8E6F1] h-[2px] mt-2"> </div>
@@ -24,7 +27,7 @@ export const CartTotal = () => {
             Totals:
           </h3>
           <p className="text-[16px] font-normal font-lato text-[#15245E]">
-            $325.00
+           ${getCartTotal()}
           </p>
         </div>
         <div className="w-full bg-[#E8E6F1] h-[2px] mt-2"> </div>

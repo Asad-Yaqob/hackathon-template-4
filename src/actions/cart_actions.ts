@@ -1,18 +1,39 @@
 import { client } from "@/sanity/lib/client";
-import { Product } from "@/types/product";
 
 export const fetchCartItems = async () => {
-    const query = `*[_type == "cart"]`;
-    const cartItems = await client.fetch(query);
-    return cartItems;
+    
+  const query = `*[_type == "cart"]{
+  productId,
+name,
+price,
+  image,
+quantity,
+}`
+    const cartItems = await client.fetch(query)
+    
+    return  cartItems;
 }
 
-export const addItemToCart = async (cartItem:Product) => {
+export const removeFromCart = async (productId:string) => {
+    try {
+        const response = await client.delete(productId);
+        console.log(response);
+        return response;
+    } catch (error) {
+         console.log(`Failed to delete doc: ${error}`);
+    }
+}
+
+export const addItemToCart = async (productId:string, name:string, price:number, image: string) => {
 
     try {
         const cartShcema = {
             _type: 'cart',
-            items: [cartItem]
+            productId: productId,
+            name: name,
+            price: price,
+            image: image,
+            quantity: 1,
         }
     
         const response = await client.create(cartShcema); 
