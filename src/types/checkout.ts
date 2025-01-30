@@ -1,5 +1,12 @@
+type CartItem = {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+};
+
 export type CheckoutType = {
-    items: [],
+    items: CartItem[],
     address: string;
     appartment: string;
     city: string;

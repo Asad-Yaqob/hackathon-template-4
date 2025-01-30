@@ -1,16 +1,22 @@
 "use client";
 
 import { checkoutOrder } from "@/service/checkout";
-import { OrderType } from "@/types/order";
+
 import { createContext, useContext, useState } from "react";
 
+// Define a CartItem type
+type CartItem = {
+  id: string;
+  name: string;
+  price: number;
+  quantity: number;
+};
 
-
-
+// TotalPriceFunction type remains the same
 type TotalPriceFunction = () => number;
 
 type CheckoutType = {
-  items: []; 
+  items: CartItem[]; 
   address: string;
   appartment: string;
   city: string;
@@ -18,8 +24,7 @@ type CheckoutType = {
   totalPrice: number;
 };
 
-
-type  CheckoutContextType = {
+type CheckoutContextType = {
   firstName: string;
   lastName: string;
   email: string;
@@ -34,11 +39,12 @@ type  CheckoutContextType = {
   setAppartment: React.Dispatch<React.SetStateAction<string>>;
   setCity: React.Dispatch<React.SetStateAction<string>>;
   setPostalCode: React.Dispatch<React.SetStateAction<string>>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   handleCheckout: (
-    cartItems: [],
+    cartItems: CartItem[],
     totalPrice: TotalPriceFunction
-  ) => Promise<any>;
-}
+  ) => Promise<unknown>;
+};
 
 // Create the context with an initial value
 const CheckoutContext = createContext<CheckoutContextType>(
@@ -56,7 +62,6 @@ export const CheckoutProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
-  
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -67,10 +72,9 @@ export const CheckoutProvider = ({
 
   // Handle the checkout process
   const handleCheckout = async (
-    cartItems: [],
+    cartItems: CartItem[], 
     totalPrice: TotalPriceFunction
   ) => {
-
     const userData = {
       firstName,
       lastName,
@@ -78,7 +82,7 @@ export const CheckoutProvider = ({
     };
 
     const checkoutData: CheckoutType = {
-      items: cartItems,
+      items: cartItems, 
       address,
       appartment,
       city,
@@ -91,10 +95,12 @@ export const CheckoutProvider = ({
     if (order) {
       return order;
     }
+
+    return ;
   };
 
   // Provide the context values
-  const values = {
+  const values: CheckoutContextType = {
     firstName,
     lastName,
     email,
@@ -109,7 +115,7 @@ export const CheckoutProvider = ({
     setAppartment,
     setCity,
     setPostalCode,
-    handleCheckout,
+    handleCheckout, 
   };
 
   return (
