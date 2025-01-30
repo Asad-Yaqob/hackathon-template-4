@@ -18,16 +18,12 @@ export const useCartContext = () => {
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   
-  const [dynamicCartItems, setDynamicCartItems] = useState(
-    localStorage.getItem("cartItems")
-      ? JSON.parse(localStorage.getItem("cartItems") as string)
-      : []
-  );
+  const [dynamicCartItems, setDynamicCartItems] = useState<cartType[]>([]);
 
   useEffect(() => {
     const loadCartItems = async () => {
       const cartItems:cartType[] = await fetchCartItems();
-      localStorage.setItem("cartItems", JSON.stringify(cartItems));
+      setDynamicCartItems(cartItems);
     };
 
     loadCartItems();
