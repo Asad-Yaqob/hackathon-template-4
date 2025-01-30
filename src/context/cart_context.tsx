@@ -26,7 +26,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const loadCartItems = async () => {
-      const cartItems = await fetchCartItems();
+      const cartItems:cartType[] = await fetchCartItems();
       localStorage.setItem("cartItems", JSON.stringify(cartItems));
     };
 

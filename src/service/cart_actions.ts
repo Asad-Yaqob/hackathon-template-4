@@ -1,6 +1,8 @@
 import { client } from "@/sanity/lib/client";
+import { cartType } from "@/types/cart";
 
-export const fetchCartItems = async () => {
+
+export const fetchCartItems = async (): Promise<cartType[]> => {
     
   const query = `*[_type == "cart"]{
   _id,

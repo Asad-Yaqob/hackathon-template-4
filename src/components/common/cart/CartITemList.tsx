@@ -8,8 +8,11 @@ import { cartItems } from "@/app/data/sample_data";
 import { cartType } from "@/types/cart";
 
 export const CartITemList = () => {
-  const { dynamicCartItems, clearCart } = useCartContext();
-// console.log(dynamicCartItems);
+  const { dynamicCartItems, clearCart } = useCartContext() as {
+    dynamicCartItems: cartType[];
+    clearCart: () => void;
+  };
+  // console.log(dynamicCartItems);
   return (
     <div>
       <table className="w-full">
