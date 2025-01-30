@@ -3,7 +3,38 @@
 import { checkoutOrder } from "@/service/checkout";
 import { createContext, useContext, useState } from "react";
 
-const CheckoutContext = createContext({});
+interface CheckoutContextType {
+  firstName: string;
+
+  lastName: string;
+
+  email: string;
+
+  address: string;
+
+  appartment: string;
+
+  city: string;
+
+  postalCode: string;
+
+  setFirstName: React.Dispatch<React.SetStateAction<string>>;
+
+  setLastName: React.Dispatch<React.SetStateAction<string>>;
+
+  setEmail: React.Dispatch<React.SetStateAction<string>>;
+
+  setAddress: React.Dispatch<React.SetStateAction<string>>;
+
+  setAppartment: React.Dispatch<React.SetStateAction<string>>;
+
+  setCity: React.Dispatch<React.SetStateAction<string>>;
+
+  setPostalCode: React.Dispatch<React.SetStateAction<string>>;
+}
+
+
+const CheckoutContext = createContext<CheckoutContextType>({} as CheckoutContextType);
 
 export const useCheckoutContext = () => {
   return useContext(CheckoutContext);

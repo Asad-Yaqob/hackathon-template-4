@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { useCheckoutContext } from "@/context/checkout_context";
 
+
 export const CheckoutForm = () => {
   const {
     firstName,
@@ -18,7 +19,7 @@ export const CheckoutForm = () => {
     setAddress,
     setAppartment,
     setCity,
-    setPostalCode
+    setPostalCode,
   } = useCheckoutContext();
 
   
