@@ -1,6 +1,27 @@
-import React from 'react'
+import React from "react";
+import Link from "next/link";
+
+import { useCheckoutContext } from "@/context/checkout_context";
 
 export const CheckoutForm = () => {
+  const {
+    firstName,
+    lastName,
+    email,
+    address,
+    appartment,
+    city,
+    postalCode,
+    setFirstName,
+    setLastName,
+    setEmail,
+    setAddress,
+    setAppartment,
+    setCity,
+    setPostalCode
+  } = useCheckoutContext();
+
+  
   return (
     <div className="w-[770px] h-[920px] bg-[#F8F8FD] p-10 my-5">
       <div className="flex justify-between items-center">
@@ -14,15 +35,20 @@ export const CheckoutForm = () => {
 
       <div className="mt-14">
         <div className="mt-6">
-          <span className=" text-[14px] font-lato font-bold text-[#C1C8E1]">
-            Email or mobile phone number
-          </span>
-          <hr className="mt-3 border-[#BFC6E0]" />
+          <input
+            type="text"
+            className="text-[14px] font-lato font-bold text-[#C1C8E1] outline-none w-full p-4 bg-[#F8F8FD]"
+            placeholder="Email or mobile phone number"
+            onChange={(e) => setEmail(e.target.value)}
+            value={email}
+            required
+          />
+          <hr className=" border-[#BFC6E0]" />
         </div>
 
         <div className="flex items-center gap-2 my-6">
           <span className="w-[8px] h-[8px] rounded-full bg-[#19D16F]"></span>
-          <p className="text-[12px] font-lato font-medium text-[#8A91AB]">
+          <p className="text-[12px] font-lato font-medium text-[#C1C8E1]">
             Keep me up to date on news and excluive offers
           </p>
         </div>
@@ -35,62 +61,87 @@ export const CheckoutForm = () => {
 
         <div className="flex justify-between items-center">
           <div className="mt-6">
-            <span className=" text-[14px] font-lato font-bold text-[#C1C8E1]">
-              First name (optional)
-            </span>
-            <hr className="mt-3 border-[#BFC6E0] w-[336px]" />
+            <input
+              type="text"
+              className="text-[14px] font-lato font-bold text-[#C1C8E1] outline-none w-full p-4 bg-[#F8F8FD]"
+              placeholder="First name (optional)"
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
+              required
+            />
+            <hr className=" border-[#BFC6E0] w-[336px]" />
           </div>
           <div className="mt-6">
-            <span className=" text-[14px] font-lato font-bold text-[#C1C8E1]">
-              Last Name
-            </span>
-            <hr className="mt-3 border-[#BFC6E0] w-[336px]" />
+            <input
+              type="text"
+              className="text-[14px] font-lato font-bold text-[#C1C8E1] outline-none w-full p-4 bg-[#F8F8FD]"
+              placeholder="Last Name"
+              onChange={(e) => setLastName(e.target.value)}
+              value={lastName}
+              required
+            />
+            <hr className=" border-[#BFC6E0] w-[336px]" />
           </div>
         </div>
 
         <div>
           <div className="mt-6">
-            <span className=" text-[14px] font-lato font-bold text-[#C1C8E1]">
-              Address
-            </span>
-            <hr className="mt-3 border-[#BFC6E0]" />
+            <input
+              type="text"
+              className="text-[14px] font-lato font-bold text-[#C1C8E1] outline-none w-full p-4 bg-[#F8F8FD]"
+              placeholder="Address"
+              onChange={(e) => setAddress(e.target.value)}
+              value={address}
+              required
+            />
+            <hr className=" border-[#BFC6E0]" />
           </div>
           <div className="mt-6">
-            <span className=" text-[14px] font-lato font-bold text-[#C1C8E1]">
-              Appaetnentment,suit,e.t.c (optinal)
-            </span>
-            <hr className="mt-3 border-[#BFC6E0]" />
-          </div>
-          <div className="mt-6">
-            <span className=" text-[14px] font-lato font-bold text-[#C1C8E1]">
-              City
-            </span>
-            <hr className="mt-3 border-[#BFC6E0]" />
+            <input
+              type="text"
+              className="text-[14px] font-lato font-bold text-[#C1C8E1] outline-none w-full p-4 bg-[#F8F8FD]"
+              placeholder="Appaetnentment,suit,e.t.c (optinal)"
+              onChange={(e) => setAppartment(e.target.value)}
+              value={appartment}
+              required
+            />
+            <hr className=" border-[#BFC6E0]" />
           </div>
         </div>
 
         <div className="flex justify-between items-center">
           <div className="mt-6">
-            <span className=" text-[14px] font-lato font-bold text-[#C1C8E1]">
-              Bangladesh
-            </span>
-            <hr className="mt-3 border-[#BFC6E0] w-[336px]" />
+            <input
+              type="text"
+              className="text-[14px] font-lato font-bold text-[#C1C8E1] outline-none w-full p-4 bg-[#F8F8FD]"
+              placeholder="Bangladesh"
+              onChange={(e) => setCity(e.target.value)}
+              value={city}
+              required
+            />
+            <hr className=" border-[#BFC6E0] w-[336px]" />
           </div>
           <div className="mt-6">
-            <span className=" text-[14px] font-lato font-bold text-[#C1C8E1]">
-              Postal Code
-            </span>
-            <hr className="mt-3 border-[#BFC6E0] w-[336px]" />
+            <input
+              type="text"
+              className="text-[14px] font-lato font-bold text-[#C1C8E1] outline-none w-full p-4 bg-[#F8F8FD]"
+              placeholder="Postal Code"
+              onChange={(e) => setPostalCode(e.target.value)}
+              value={postalCode}
+              required
+            />
+            <hr className="border-[#BFC6E0] w-[336px]" />
           </div>
         </div>
       </div>
 
       <div className="mt-36">
-        <button className="bg-[#FB2E86] w-[182px] h-[44px] text-[16px] text-[#FFFFFF] font-josefin rounded">
-          Continue Shipping
-        </button>
+        <Link href={"/"}>
+          <button className="bg-[#FB2E86] w-[182px] h-[44px] text-[16px] text-[#FFFFFF] font-josefin rounded">
+            Continue Shipping
+          </button>
+        </Link>
       </div>
     </div>
   );
-}
-
+};

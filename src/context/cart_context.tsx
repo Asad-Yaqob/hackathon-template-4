@@ -1,6 +1,6 @@
 "use client";
 
-import { fetchCartItems } from "@/actions/cart_actions";
+import { addItemToCart, fetchCartItems, removeItemFromCart } from "@/service/cart_actions";
 import { cartType } from "@/types/cart";
 import {
   createContext,
@@ -17,9 +17,10 @@ export const useCartContext = () => {
 };
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
+  
   const [dynamicCartItems, setDynamicCartItems] = useState(
     localStorage.getItem("cartItems")
-      ? JSON.parse(localStorage.getItem("cartItems") || '[]')
+      ? JSON.parse(localStorage.getItem("cartItems") as string)
       : []
   );
 
@@ -49,14 +50,14 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
         )
       );
     } else {
-      // await addItemToCart(productId);
+      await addItemToCart(item.productId, item.name, item.price, item.image);
       setDynamicCartItems([...dynamicCartItems, { ...item, quantity: 1 }]); // if the item is not in the cart, add the item to the cart
     }
   };
 
-  const removeFromCart = (item: cartType) => {
+  const removeFromCart = async (item: cartType) => {
     const isItemInCart = dynamicCartItems.find(
-      (cartItem:cartType) => cartItem.productId === item.productId
+      (cartItem: cartType) => cartItem.productId === item.productId
     );
 
     if (isItemInCart && isItemInCart.quantity === 1) {
@@ -65,6 +66,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
           (cartItem: cartType) => cartItem.productId !== item.productId
         )
       );
+
+     await removeItemFromCart(item._id);
     } else {
       setDynamicCartItems(
         dynamicCartItems.map((cartItem: cartType) =>
@@ -82,7 +85,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const getCartTotal = () => {
     return dynamicCartItems.reduce(
-      (total:number, item:cartType) => total + item.price * item.quantity,
+      (total: number, item: cartType) => total + item.price * item.quantity,
       0
     );
   };

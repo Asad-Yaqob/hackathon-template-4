@@ -1,6 +1,6 @@
 import React from "react";
 import { ProductCard } from "../resuable/FeaturedProductCard";
-import { fetchFeaturedProducts } from "@/actions/product_actions";
+import { fetchFeaturedProducts } from "@/service/product_actions";
 import { Product } from "@/types/product";
 
 export async function FeaturedProducts() {

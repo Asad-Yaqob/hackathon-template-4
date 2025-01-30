@@ -5,7 +5,7 @@ import { SortAndFilter } from "@/components/common/shop/SortAntFilter";
 import { ShopListCard } from "@/components/common/shop/ShopListCard";
 import { BrandsHeader } from "@/components/common/footer/BrandsHeader";
 import { Product } from "@/types/product";
-import { fetchProducts } from "@/actions/product_actions";
+import { fetchProducts } from "@/service/product_actions";
 
 const ShopList = async () => {
   const products = await fetchProducts();

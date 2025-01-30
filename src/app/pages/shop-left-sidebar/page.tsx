@@ -5,7 +5,7 @@ import { SortAndFilter } from "@/components/common/shop/SortAntFilter";
 import { SidebarFilterOption } from "@/components/common/shop/SidebarFilterOption";
 import { ShopListCard } from "@/components/common/shop/ShopListCard";
 import { BrandsHeader } from "@/components/common/footer/BrandsHeader";
-import { fetchProducts } from "@/actions/product_actions";
+import { fetchProducts } from "@/service/product_actions";
 import { Product } from "@/types/product";
 
 const ShopLeftSidebar = async () => {

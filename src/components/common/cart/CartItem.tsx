@@ -11,6 +11,7 @@ type CartItemsProps = {
   price: string;
   quantity: number;
   productId: string;
+  _id: string;
 };
 
 export const CartItem = ({
@@ -19,11 +20,13 @@ export const CartItem = ({
   price,
   quantity,
   productId,
+  _id,
 }: CartItemsProps) => {
 
   const { addToCart, removeFromCart } = useCartContext();
 
   const cartItem = {
+    _id,
     productId,
     name,
     image,

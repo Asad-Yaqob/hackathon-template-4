@@ -1,5 +1,5 @@
-'use client'
-import { addItemToCart } from "@/actions/cart_actions";
+"use client";
+import { addItemToCart } from "@/service/cart_actions";
 import { Product } from "@/types/product";
 import { Star } from "lucide-react";
 import Image from "next/image";

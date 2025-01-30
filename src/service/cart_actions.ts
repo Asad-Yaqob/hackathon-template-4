@@ -3,6 +3,7 @@ import { client } from "@/sanity/lib/client";
 export const fetchCartItems = async () => {
     
   const query = `*[_type == "cart"]{
+  _id,
   productId,
 name,
 price,
@@ -14,7 +15,7 @@ quantity,
     return  cartItems;
 }
 
-export const removeFromCart = async (productId:string) => {
+export const removeItemFromCart = async (productId:string) => {
     try {
         const response = await client.delete(productId);
         console.log(response);

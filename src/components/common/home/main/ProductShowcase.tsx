@@ -35,63 +35,46 @@ export const ProductShowcase = () => {
   return (
     <section className="w-full py-8 md:py-12 lg:py-16">
       <div className="min-h-[400px] md:min-h-[579px] w-full bg-[#F1F0FF]">
-        <div className="container mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-around px-4 md:px-8 gap-5">
+          {/* Product Image Container */}
+          <div className="relative w-full max-w-[509px] flex justify-center">
+            {/* Rounded background */}
+            <div className="absolute w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] md:w-[448px] md:h-[448px] bg-[#ECD2FA59] rounded-full" />
+            {/* Image */}
+            <Image
+              width={250}
+              height={250}
+              src="/images/products/club-sofa.png"
+              alt="B&B Italian Sofa"
+              className="w-full max-w-[250px] sm:max-w-[300px] md:max-w-[400px] lg:max-w-[509px] object-contain relative z-10"
+            />
+          </div>
 
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-16">
-            
-          <div className="flex justify-center items-center">
-      {/* Product Image Container */}
-      <div className="relative flex flex-col items-center justify-center w-full max-w-[509px]">
-        {/* Rounded div behind the image */}
-        <div
-          className="absolute top-0 -right-10 -left-10 md:top-10 md:right-10 
-          w-[280px] h-[280px] sm:w-[320px] sm:h-[320px] 
-          md:w-[448px] md:h-[448px] bg-[#ECD2FA59] rounded-full"
-        />
-        
-        {/* Image */}
-        <div className="relative">
-          <Image
-            width={250}
-            height={250}
-            src="/images/products/club-sofa.png"
-            alt="B&B Italian Sofa"
-            className="w-full h-auto max-w-[250px] sm:max-w-[300px] 
-            md:max-w-[400px] lg:max-w-[509px] object-contain relative z-10"
-          />
-        </div>
-      </div>
-    </div>
+          {/* Product Details */}
+          <div className="flex-1 max-w-xl py-4 md:py-8 space-y-4 px-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-[35px] font-bold text-indigo-900 text-center lg:text-left">
+              Unique Features Of Latest & Trending Products
+            </h2>
 
-            {/* Product Details */}
-            <div className="flex-1 max-w-xl py-4 md:py-8 space-y-4 md:space-y-6 px-4 md:px-0">
-              <h2
-                className="text-xl sm:text-2xl md:text-3xl lg:text-[35px] 
-                font-josefin font-bold text-indigo-900 leading-tight text-center lg:text-left"
-              >
-                Unique Features Of Latest & Trending Products
-              </h2>
+            <div className="space-y-3 md:space-y-4">
+              {features.map((feature, index) => (
+                <ProductFeature
+                  key={index}
+                  text={feature.text}
+                  color={feature.color}
+                />
+              ))}
+            </div>
 
-              <div className="space-y-3 md:space-y-4">
-                {features.map((feature, index) => (
-                  <ProductFeature
-                    key={index}
-                    text={feature.text}
-                    color={feature.color}
-                  />
-                ))}
-              </div>
-
-              <div className="flex items-center space-x-4 justify-center lg:justify-start">
-                <MButton />
-                <div>
-                  <p className="text-sm md:text-base lg:text-[16px] font-josefin text-[#151875]">
-                    B&B Italian Sofa
-                  </p>
-                  <p className="text-xs md:text-sm lg:text-[14px] text-[#151875] font-lato">
-                    $32.00
-                  </p>
-                </div>
+            <div className="flex items-center space-x-4 justify-center lg:justify-start">
+              <MButton />
+              <div>
+                <p className="text-sm md:text-base text-[#151875]">
+                  B&B Italian Sofa
+                </p>
+                <p className="text-xs md:text-sm text-[#151875] font-light">
+                  $32.00
+                </p>
               </div>
             </div>
           </div>

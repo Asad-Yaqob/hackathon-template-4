@@ -1,4 +1,5 @@
 export type cartType = {
+    _id: string,
             productId:string,
             name: string,
             price: number,

@@ -8,7 +8,7 @@ export default function Home() {
       <section className="bg-[#F2F0FF] min-h-screen lg:h-[764px] w-full flex items-center justify-center py-12 lg:py-0">
         <div className="container mx-auto flex flex-col lg:flex-row items-center justify-center relative px-4">
           {/* Lamp Decoration */}
-          <div className="hidden lg:block absolute md:top-[-70px] md:left-[-80px]">
+          <div className="hidden lg:block  absolute md:top-[-70px] md:left-[-80px] lg:top-[-160px] xl:top-[-140px]  2xl:top-[-70px]">
             <Image
               src="/images/home_banner/lamp.png"
               alt="Lamp"

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import React from "react";
 
@@ -7,11 +7,9 @@ import { useCartContext } from "@/context/cart_context";
 import { cartItems } from "@/app/data/sample_data";
 import { cartType } from "@/types/cart";
 
-
 export const CartITemList = () => {
-
-  const {dynamicCartItems, clearCart} = useCartContext();
-
+  const { dynamicCartItems, clearCart } = useCartContext();
+// console.log(dynamicCartItems);
   return (
     <div>
       <table className="w-full">
@@ -35,6 +33,7 @@ export const CartITemList = () => {
           {dynamicCartItems == null
             ? cartItems.map((item) => (
                 <CartItem
+                  _id={item.name}
                   image={item.image}
                   name={item.name}
                   price={item.price}
@@ -45,6 +44,7 @@ export const CartITemList = () => {
               ))
             : dynamicCartItems.map((product: cartType) => (
                 <CartItem
+                  _id={product._id}
                   image={product.image}
                   name={product.name}
                   price={product.price.toString()}

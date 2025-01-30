@@ -3,8 +3,8 @@ import React from "react";
 
 interface checkoutItemProps {
   image: string;
-  color: string;
-  size: string;
+  color?: string;
+  size?: string;
   price: number;
   name: string;
 }
@@ -34,7 +34,7 @@ const CheckoutItem = ({
               Color:
             </span>
             <span className="text-[12px] font-josefin text-[#A1A8C1]">
-              {color}
+              {color ?? "Brown"}
             </span>
           </div>
           <div className="flex gap-1">
@@ -42,7 +42,7 @@ const CheckoutItem = ({
               Size:
             </span>
             <span className="text-[12px] font-josefin text-[#A1A8C1]">
-              {size}
+              {size ?? "XL"}
             </span>
           </div>
         </div>

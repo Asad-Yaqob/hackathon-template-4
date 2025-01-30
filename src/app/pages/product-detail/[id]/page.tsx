@@ -3,7 +3,7 @@ import TitleHeader from "@/components/common/header/TitleHeader";
 import { ProductInformationSection } from "@/components/common/product/ProductInformationSection";
 import { ProductDetailSection } from "@/components/common/product/ProductDetailSection";
 import { RelatedProductSection } from "@/components/common/product/RelatedProductSection";
-import { fetchProductById } from "@/actions/product_actions";
+import { fetchProductById } from "@/service/product_actions";
 import { Product } from "@/types/product";
 
 const ProductDetail = async ({
