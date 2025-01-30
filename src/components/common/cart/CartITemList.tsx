@@ -39,7 +39,7 @@ export const CartITemList = () => {
                   _id={item.name}
                   image={item.image}
                   name={item.name}
-                  price={item.price}
+                  price={parseInt(item.price)}
                   quantity={item.quantity}
                   productId={item.price}
                   key={item.name}
@@ -50,7 +50,7 @@ export const CartITemList = () => {
                   _id={product._id}
                   image={product.image}
                   name={product.name}
-                  price={product.price.toString()}
+                  price={product.price}
                   quantity={product.quantity}
                   productId={product.productId}
                   key={product.productId}

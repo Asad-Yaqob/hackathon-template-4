@@ -4,11 +4,12 @@ import Image from "next/image";
 
 import { Minus, Plus } from "lucide-react";
 import { useCartContext } from "@/context/cart_context";
+import { cartType } from "@/types/cart";
 
 type CartItemsProps = {
   image: string;
   name: string;
-  price: string;
+  price: number;
   quantity: number;
   productId: string;
   _id: string;
@@ -23,7 +24,11 @@ export const CartItem = ({
   _id,
 }: CartItemsProps) => {
 
-  const { addToCart, removeFromCart } = useCartContext();
+  const { addToCart, removeFromCart } = useCartContext() as {
+    addToCart: (cartItem: cartType) => void;
+    removeFromCart: (cartItem: cartType) => void;
+  };
+
 
   const cartItem = {
     _id,
@@ -33,8 +38,8 @@ export const CartItem = ({
     price,
     quantity,
   }
-  const convertPrice = parseInt(price);
-  const totalPrice = convertPrice * quantity;
+  
+  const totalPrice = price * quantity;
 
   return (
     <>
