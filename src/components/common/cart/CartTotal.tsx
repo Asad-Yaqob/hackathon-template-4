@@ -5,6 +5,7 @@ import { useCartContext } from "@/context/cart_context";
 import { useCheckoutContext } from "@/context/checkout_context";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { OrderType } from "@/types/order";
 
 export const CartTotal = ({ isNavigate }: { isNavigate: boolean }) => {
   const { getCartTotal, dynamicCartItems } = useCartContext() as {
@@ -14,28 +15,9 @@ export const CartTotal = ({ isNavigate }: { isNavigate: boolean }) => {
 
   const { handleCheckout } = useCheckoutContext() as {
     handleCheckout: (
-      cartItems: {
-        id: string;
-        name: string;
-        price: number;
-        quantity: number;
-      }[],
+      cartItems:[],
       totalPrice: () => number
-    ) => Promise<{
-      _type: string;
-      user: {
-        _type: string;
-        _ref: string | undefined;
-      };
-      items: [];
-      address: string;
-      appartment: string;
-      city: string;
-      postalCode: string;
-      totalPrice: number;
-      status: string;
-      orderDate: string;
-    }>;
+    ) => Promise<OrderType>;
   };
 
   const router = useRouter();
