@@ -1,50 +1,43 @@
-
 import { FaList } from "react-icons/fa6";
 import { IoGrid } from "react-icons/io5";
 
 export const SortAndFilter = () => {
   return (
-    <div className="w-full max-w-[1171px] h-[44px] mt-[100px] mb-[100px]">
-      <div className="flex items-end justify-between">
+    <div className="w-full max-w-[1171px] mt-10 mb-10 px-4">
+      <div className="flex flex-col md:flex-row md:items-center justify-between">
         <div>
-          <h3 className="font-josefin text-[#151875] text-[22px]">
-            Ecommerce Acceories & Fashion item
+          <h3 className="font-josefin text-[#151875] text-[18px] sm:text-[22px]">
+            Ecommerce Accessories & Fashion Items
           </h3>
           <p className="font-lato text-[#151875] text-[12px] font-normal">
             About 9,620 results (0.62 seconds)
           </p>
         </div>
-        <div className="flex items-end ">
-          <div className="flex">
-            <span className="font-lato text-[#3F509E] text-[16px] font-normal">
+        <div className="flex flex-wrap items-center gap-3 mt-4 md:mt-0">
+          <div className="flex items-center gap-2">
+            <span className="font-lato text-[#3F509E] text-[14px]">
               Per Page:
             </span>
             <input
               type="text"
-              className=" border w-full max-w-[55px] h-[25px] ms-1"
+              className="border w-[55px] h-[25px] text-center"
             />
           </div>
-          <div className="flex ms-5 me-5">
-            <span className="font-lato text-[#3F509E] text-[16px] font-normal">
+          <div className="flex items-center gap-2">
+            <span className="font-lato text-[#3F509E] text-[14px]">
               Sort By:
             </span>
             <input
               type="text"
               placeholder="Best Match"
-              className=" text-center text-[Best Match] border w-full max-w-[96px] h-[28px] ms-1"
+              className="border w-[96px] h-[28px] text-center"
             />
           </div>
-          <div className="flex">
-            <span className="font-lato text-[#3F509E] text-[16px] font-normal">
-              View:
-            </span>
-            <div className="flex items-center ms-2 me-2">
-              <IoGrid height={4} width={4} /> <FaList height={4} width={4} className="ms-2" />
+          <div className="flex items-center gap-2">
+            <span className="font-lato text-[#3F509E] text-[14px]">View:</span>
+            <div className="flex items-center gap-2">
+              <IoGrid size={16} /> <FaList size={16} />
             </div>
-            <input
-              type="text"
-              className=" border w-full max-w-[162px] h-[30px] ms-1"
-            />
           </div>
         </div>
       </div>
