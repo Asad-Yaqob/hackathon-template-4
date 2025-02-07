@@ -6,6 +6,7 @@ import { RelatedProductSection } from "@/components/common/product/RelatedProduc
 import { fetchProductById } from "@/service/product_actions";
 import { Product } from "@/types/product";
 
+
 const ProductDetail = async ({
   params,
 }: {
@@ -15,6 +16,7 @@ const ProductDetail = async ({
   const productData: Product[] = await fetchProductById(productId);
   return (
     <>
+
       <TitleHeader title="Product Detail" />
       <ProductInformationSection data={productData} />
       <ProductDetailSection />

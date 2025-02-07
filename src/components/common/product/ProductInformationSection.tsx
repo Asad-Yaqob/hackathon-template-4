@@ -1,19 +1,38 @@
 "use client";
 import { addItemToCart } from "@/service/cart_actions";
 import { Product } from "@/types/product";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"; // Ensure styles are imported
 import { Star } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { BiHeart } from "react-icons/bi";
 import { BsFacebook, BsInstagram, BsTwitter } from "react-icons/bs";
 
+
 export const ProductInformationSection = ({ data }: { data: Product[] }) => {
-  // console.log(data);
+  const handleClick = async () => {
+    const response = await addItemToCart(
+      data[0]._id,
+      data[0].name,
+      parseInt(data[0].price),
+      data[0].imageUrl
+    );
+
+    if (response) {
+      toast.dismiss();
+      toast.success("Product added to cart successfully");
+      return;
+    }
+
+    toast.dismiss();
+    toast.success("Failed to add product cart successfully");
+  };
+
   return (
     <div>
       <div className="w-[1170px] h-[509px] my-10 mx-auto">
         <div className="flex items-center justify-center">
-          {/* Vertical Images */}
           <div className="flex flex-col gap-3">
             <Image
               src={"/images/products/product-detail-1.png"}
@@ -35,7 +54,6 @@ export const ProductInformationSection = ({ data }: { data: Product[] }) => {
             />
           </div>
 
-          {/* Main Image */}
           <div className="ms-6">
             <Image
               src={data[0].imageUrl}
@@ -45,12 +63,11 @@ export const ProductInformationSection = ({ data }: { data: Product[] }) => {
             />
           </div>
 
-          {/* Product Information */}
           <div className="flex flex-col ms-10">
             <h2 className="text-[36px] font-josefin text-[#0D134E] font-bold">
               {data[0].name}
             </h2>
-            <div className="flex items-center ">
+            <div className="flex items-center">
               <Star color="#FFC416" fill="#FFC416" height={9.48} />
               <Star color="#FFC416" fill="#FFC416" height={9.48} />
               <Star color="#FFC416" fill="#FFC416" height={9.48} />
@@ -72,21 +89,14 @@ export const ProductInformationSection = ({ data }: { data: Product[] }) => {
               Color
             </h4>
             <div className="mt-5">
-              <p className="text-[16px] font-josefin text-[#A9ACC6] ">
+              <p className="text-[16px] font-josefin text-[#A9ACC6]">
                 {data[0].description}
               </p>
             </div>
-            <div className="mt-5 flex  items-center gap-5">
+            <div className="mt-5 flex items-center gap-5">
               <button
-                onClick={() =>
-                  addItemToCart(
-                    data[0]._id,
-                    data[0].name,
-                    parseInt(data[0].price),
-                    data[0].imageUrl
-                  )
-                }
-                className="text-[16px] font-josefin text-[#151875] "
+                onClick={handleClick}
+                className="text-[16px] font-josefin text-[#151875]"
               >
                 Add To Cart
               </button>
@@ -101,7 +111,6 @@ export const ProductInformationSection = ({ data }: { data: Product[] }) => {
             <h4 className="text-[16px] font-josefin text-[#0D134E] mt-5">
               Tags
             </h4>
-
             <div className="flex items-center mt-5 gap-3">
               <h4 className="text-[16px] font-josefin text-[#0D134E]">Share</h4>
               <div className="flex items-center gap-5">

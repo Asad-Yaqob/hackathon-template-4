@@ -6,6 +6,7 @@ import { useCheckoutContext } from "@/context/checkout_context";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { OrderType } from "@/types/order";
+import { toast } from "react-toastify";
 
 export const CartTotal = ({ isNavigate }: { isNavigate: boolean }) => {
   const { getCartTotal, dynamicCartItems } = useCartContext() as {
@@ -22,18 +23,13 @@ export const CartTotal = ({ isNavigate }: { isNavigate: boolean }) => {
 
   const router = useRouter();
 
-  //  useEffect(() => {
-  //    if (router && !router.isReady) {
-  //      return;
-  //    }
-  //   //  console.log(router)
-  //  }, [router]);
-
   const completeCheckout = async () => {
     const order = await handleCheckout(dynamicCartItems, getCartTotal);
 
     if (order) {
       console.log("Order completed");
+      toast.dismiss();
+      toast.success("Order completed successfully.");
       router.push("/pages/order-completed");
       return;
     }

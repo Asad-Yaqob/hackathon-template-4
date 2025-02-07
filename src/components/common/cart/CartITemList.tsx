@@ -34,7 +34,7 @@ export const CartITemList = () => {
         </thead>
         <tbody>
           {dynamicCartItems == null
-            ? cartItems.map((item) => (
+            ? cartItems.map((item, index) => (
                 <CartItem
                   _id={item.name}
                   image={item.image}
@@ -42,10 +42,10 @@ export const CartITemList = () => {
                   price={parseInt(item.price)}
                   quantity={item.quantity}
                   productId={item.price}
-                  key={item.name}
+                  key={index}
                 />
               ))
-            : dynamicCartItems.map((product: cartType) => (
+            : dynamicCartItems.map((product: cartType, index: number) => (
                 <CartItem
                   _id={product._id}
                   image={product.image}
@@ -53,7 +53,7 @@ export const CartITemList = () => {
                   price={product.price}
                   quantity={product.quantity}
                   productId={product.productId}
-                  key={product.productId}
+                  key={index}
                 />
               ))}
           <tr>

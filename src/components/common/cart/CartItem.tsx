@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Minus, Plus } from "lucide-react";
 import { useCartContext } from "@/context/cart_context";
 import { cartType } from "@/types/cart";
+import { toast } from "react-toastify";
 
 type CartItemsProps = {
   image: string;
@@ -25,8 +26,8 @@ export const CartItem = ({
 }: CartItemsProps) => {
 
   const { addToCart, removeFromCart } = useCartContext() as {
-    addToCart: (cartItem: cartType) => void;
-    removeFromCart: (cartItem: cartType) => void;
+    addToCart: (cartItem: cartType) => string;
+    removeFromCart: (cartItem: cartType) => string;
   };
 
 
@@ -40,6 +41,28 @@ export const CartItem = ({
   }
   
   const totalPrice = price * quantity;
+
+  const handleDecrement = async () => {
+   const response = await removeFromCart(cartItem);
+
+   if (response) {
+    toast.dismiss();
+    toast.success("Item removed from cart");
+   }
+  }
+
+const handleIncrement = async () => {
+  const response = await addToCart(cartItem);
+
+  if (response) {
+    toast.dismiss();
+    toast.success("quantity increased");
+    return;
+  }
+
+  toast.dismiss();
+  toast.error("Failed to increase quanitity");
+};
 
   return (
     <>
@@ -85,7 +108,7 @@ export const CartItem = ({
         <td className="px-4 py-2">
           <div className="flex items-center justify-center">
             <button
-              onClick={() => removeFromCart(cartItem)}
+              onClick={handleDecrement}
               className="bg-[#E7E7EF] w-[24px] h-[24px] flex items-center justify-center rounded"
             >
               <Minus width={12} />
@@ -94,7 +117,7 @@ export const CartItem = ({
               {quantity}
             </p>
             <button
-              onClick={() => addToCart(cartItem)}
+              onClick={handleIncrement}
               className="bg-[#E7E7EF] w-[24px] h-[24px] flex items-center justify-center rounded"
             >
               <Plus width={12} />

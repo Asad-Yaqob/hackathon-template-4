@@ -45,6 +45,8 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
               : cartItem // otherwise, return the cart item
         )
       );
+
+      return 'Success';
     } else {
       await addItemToCart(item.productId, item.name, item.price, item.image);
       setDynamicCartItems([...dynamicCartItems, { ...item, quantity: 1 }]); // if the item is not in the cart, add the item to the cart

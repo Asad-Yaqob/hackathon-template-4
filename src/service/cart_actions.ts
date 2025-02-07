@@ -20,7 +20,6 @@ quantity,
 export const removeItemFromCart = async (productId:string) => {
     try {
         const response = await client.delete(productId);
-        console.log(response);
         return response;
     } catch (error) {
          console.log(`Failed to delete doc: ${error}`);
